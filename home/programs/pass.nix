@@ -21,8 +21,6 @@
 	nopager = false
 	exportkeys = true
 	autoclip = true
-[mounts "root"]
-	path = ${vars.homeDirectory}/.password-store
 [mounts "teapot"]
 	path = ${vars.homeDirectory}/.local/share/teapot
 [age]
