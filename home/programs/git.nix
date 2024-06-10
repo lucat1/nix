@@ -3,8 +3,13 @@
 {
   programs.git = {
     enable = true;
-    userName = "Luca Tagliavini";
+    userName = "Luca";
     userEmail = "luca@teapot.ovh";
+
+    signing = {
+      key = "3133FC373370010F";
+      signByDefault = true;
+    };
 
     aliases = {
       cm = "commit -m";
@@ -13,7 +18,14 @@
 
     extraConfig = {
       init = { defaultBranch = "main"; };
+      pull = { rebase = true; };
       push = { autoSetupRemote = true; };
+
+      # always use nvim as the editor
+      core = { editor = "nvim"; };
+      diff = { editor = "nvimdiff"; };
+      merge = { editor = "nvimdiff"; };
+      mergetool."nvimdiff" = { path = "nvim"; };
     };
   };
 }
