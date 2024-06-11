@@ -5,5 +5,6 @@
     wl-clipboard
     pavucontrol
     imv
+    fend
   ];
 }
