@@ -15,7 +15,7 @@
         kb_options = "grp:shifts_toggle,caps:escape";
 
         sensitivity = 0.1;
-        scroll_factor = 0.3;
+        scroll_factor = 0.1;
         accel_profile = "adaptive";
         touchpad = {
           natural_scroll = true;

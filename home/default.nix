@@ -20,6 +20,7 @@
     ./desktop/hyprlock.nix
     ./desktop/hyprpaper.nix
     ./desktop/waybar.nix
+    ./desktop/mako.nix
     
     ./programs/zsh.nix
     ./programs/basic.nix
