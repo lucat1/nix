@@ -66,4 +66,5 @@ let vars = import ./vars.nix; in
   # networking.firewall.allowedUDPPorts = [ ... ];
   fonts.fontDir.enable = true;
   programs.dconf.enable = true;
+  services.tlp.enable = true;
 }
