@@ -18,43 +18,45 @@ let vars = import ./vars.nix; in
   };
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixlib.url = "github:nix-community/nixpkgs.lib";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # hyprland.url = "github:hyprwm/Hyprland/main";
-    # hypridle.url = "github:hyprwm/hypridle/main";
-    # hyprlock.url = "github:hyprwm/hyprlock/main";
-    # hyprpaper.url = "github:hyprwm/hyprpaper/main";
+    hyprland = {
+      type = "git";
+      url = "https://github.com/hyprwm/Hyprland";
+      submodules = true;
+    };
+
   };
 
-  outputs = inputs@{ nixpkgs, nixos-hardware, home-manager, ... }: { # hyprland, hypridle, hyprlock, hyprpaper, 
+  outputs = inputs@{ nixpkgs, nixos-hardware, home-manager, hyprland, ... }: {
     nixosConfigurations."${vars.hostname}" = nixpkgs.lib.nixosSystem{
       system = vars.arch;
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      specialArgs = { inherit inputs; };
 
       modules = [
         ./configuration.nix
-        nixos-hardware.nixosModules.lenovo-yoga-7-14ARH7.amdgpu
+          nixos-hardware.nixosModules.lenovo-yoga-7-14ARH7.amdgpu
+# hyprland.homeManagerModules.default
 
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users."${vars.user}" = {
-	    imports = [
-              # hyprland.homeManagerModules.default
-              # hypridle.homeManagerModules.default
-              # hyprlock.homeManagerModules.default
-              # hyprpaper.homeManagerModules.default
-              ./home
-	    ];
-	  };
-	  home-manager.extraSpecialArgs = { vars = import ./vars.nix; };
-        }
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users."${vars.user}" = {
+              imports = [
+                ./home
+              ];
+            };
+            home-manager.extraSpecialArgs = { vars = import ./vars.nix; inputs = inputs; };
+          }
       ];
     };
   };

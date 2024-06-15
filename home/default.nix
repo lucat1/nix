@@ -19,10 +19,12 @@
     ./desktop/hyprland.nix
     ./desktop/hyprlock.nix
     ./desktop/hyprpaper.nix
+    ./desktop/kanshi.nix
     ./desktop/waybar.nix
     ./desktop/mako.nix
     
     ./programs/zsh.nix
+    ./programs/direnv.nix
     ./programs/basic.nix
     ./programs/ssh.nix
     ./programs/gpg.nix

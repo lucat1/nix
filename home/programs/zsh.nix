@@ -3,6 +3,7 @@
 {
   programs.zsh = {
     enable = true;
+    enableCompletion = true;
 
     shellAliases = {
       ls = "eza --header --git";
@@ -18,22 +19,22 @@
       };
       pmodules = [
         "environment"
-        "terminal"
-        "editor"
-        "history"
-        "directory"
-        "spectrum"
-        "utility"
-        "completion"
-        "prompt"
-        "git"
-        "syntax-highlighting"
-        "autosuggestions"
+          "terminal"
+          "editor"
+          "history"
+          "directory"
+          "spectrum"
+          "utility"
+          "completion"
+          "prompt"
+          "git"
+          "syntax-highlighting"
+          "autosuggestions"
       ];
       prompt = {
         theme = "skwp";
-	pwdLength = "short";
-	showReturnVal = true;
+        pwdLength = "short";
+        showReturnVal = true;
       };
     };
   };

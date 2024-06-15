@@ -6,18 +6,22 @@
     flakegen.url = "github:jorsn/flakegen";
     home-manager = {
       inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/master";
     };
-    # hypridle.url = "github:hyprwm/hypridle";
-    # hyprland.url = "github:hyprwm/Hyprland";
-    # hyprlock.url = "github:hyprwm/hyprlock";
-    # hyprpaper.url = "github:hyprwm/hyprpaper";
+    hyprland = {
+      submodules = true;
+      type = "git";
+      url = "https://github.com/hyprwm/Hyprland";
+    };
+    nixlib.url = "github:nix-community/nixpkgs.lib";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
   nixConfig = {
-    extra-substituters = [ "https://hyprland.cachix.org" "https://nix-community.cachix.org" "https://cache.nixos.org" ];
+    experimental-features = [ "nix-command" "flakes" ];
+    extra-substituters = [ "https://hyprland.cachix.org" "https://nix-community.cachix.org" ];
     extra-trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=" ];
+    substituters = [ "https://cache.nixos.org" ];
   };
   outputs = inputs: inputs.flakegen ./flake.in.nix inputs;
 }
