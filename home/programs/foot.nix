@@ -7,7 +7,7 @@
     settings = {
       main = {
         font = "monospace:size=${toString vars.fontSize}";
-	dpi-aware = "yes";
+        dpi-aware = "no";
       };
       mouse = {
         hide-when-typing = "yes";

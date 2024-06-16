@@ -4,7 +4,7 @@ rec {
   homeDirectory = "/home/${user}";
   arch = "x86_64-linux";
 
-  fontSize = 10;
+  fontSize = 12;
   fontFamilies = {
     monospace = "BlexMono Nerd Font";
     serif = "Roboto";
