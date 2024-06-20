@@ -1,6 +1,10 @@
-{ config, options, pkgs, vars, ... }:
-
 {
+  config,
+  options,
+  pkgs,
+  vars,
+  ...
+}: {
   programs.gpg = {
     enable = true;
     settings = {

@@ -1,6 +1,9 @@
-{ config, options, pkgs, ... }:
-
 {
+  config,
+  options,
+  pkgs,
+  ...
+}: {
   xdg.userDirs = {
     enable = true;
     createDirectories = true;
@@ -19,8 +22,8 @@
           "hyprland"
           "gtk"
         ];
-	      "org.freedesktop.impl.portal.Screenshot" = [ "hyprland" ];
-        "org.freedesktop.impl.portal.ScreenCast" = [ "hyprland" ];
+        "org.freedesktop.impl.portal.Screenshot" = ["hyprland"];
+        "org.freedesktop.impl.portal.ScreenCast" = ["hyprland"];
       };
     };
   };

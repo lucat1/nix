@@ -1,6 +1,9 @@
-{ config, options, pkgs, ... }:
-
 {
+  config,
+  options,
+  pkgs,
+  ...
+}: {
   programs.firefox = {
     enable = true;
 

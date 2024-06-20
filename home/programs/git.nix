@@ -1,6 +1,9 @@
-{ config, options, pkgs, ... }:
-
 {
+  config,
+  options,
+  pkgs,
+  ...
+}: {
   programs.git = {
     enable = true;
     userName = "Luca";
@@ -17,15 +20,15 @@
     };
 
     extraConfig = {
-      init = { defaultBranch = "main"; };
-      pull = { rebase = true; };
-      push = { autoSetupRemote = true; };
+      init = {defaultBranch = "main";};
+      pull = {rebase = true;};
+      push = {autoSetupRemote = true;};
 
       # always use nvim as the editor
-      core = { editor = "nvim"; };
-      diff = { editor = "nvimdiff"; };
-      merge = { editor = "nvimdiff"; };
-      mergetool."nvimdiff" = { path = "nvim"; };
+      core = {editor = "nvim";};
+      diff = {editor = "nvimdiff";};
+      merge = {editor = "nvimdiff";};
+      mergetool."nvimdiff" = {path = "nvim";};
     };
   };
 }

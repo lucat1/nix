@@ -1,6 +1,10 @@
-{ config, options, pkgs, vars, ... }:
-
 {
+  config,
+  options,
+  pkgs,
+  vars,
+  ...
+}: {
   programs.password-store = {
     enable = true;
     package = pkgs.gopass;
@@ -8,22 +12,22 @@
 
   programs.browserpass = {
     enable = true;
-    browsers = [ "firefox" ];
+    browsers = ["firefox"];
   };
 
   xdg.configFile."gopass/config".text = ''
-[core]
-  notifications = true
-	cliptimeout = 45
-	showsafecontent = false
-	autoimport = true
-	parsing = true
-	nopager = false
-	exportkeys = true
-	autoclip = true
-[mounts "teapot"]
-	path = ${vars.homeDirectory}/.local/share/teapot
-[age]
-	usekeychain = false
+    [core]
+      notifications = true
+    	cliptimeout = 45
+    	showsafecontent = false
+    	autoimport = true
+    	parsing = true
+    	nopager = false
+    	exportkeys = true
+    	autoclip = true
+    [mounts "teapot"]
+    	path = ${vars.homeDirectory}/.local/share/teapot
+    [age]
+    	usekeychain = false
   '';
 }

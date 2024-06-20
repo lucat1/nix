@@ -1,6 +1,9 @@
-{ config, options, pkgs, ... }:
-
 {
+  config,
+  options,
+  pkgs,
+  ...
+}: {
   programs.direnv = {
     enable = true;
     config = {

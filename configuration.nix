@@ -1,18 +1,20 @@
 # Edit this configuration file to define what should be installed on
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
-{ config, lib, pkgs, ... }:
-
-let vars = import ./vars.nix; in
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
+  vars = import ./vars.nix;
+in {
+  imports = [
+    ./hardware-configuration.nix
+  ];
 
   system.stateVersion = "23.11"; # Do not change
-  system.autoUpgrade.enable  = true;
+  system.autoUpgrade.enable = true;
   hardware.opengl.enable = true;
 
   # Use the systemd-boot EFI boot loader.
@@ -21,7 +23,7 @@ let vars = import ./vars.nix; in
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = vars.hostname;
-  networking.networkmanager.enable = true; 
+  networking.networkmanager.enable = true;
   systemd.services.nssd.enable = false;
   systemd.services.nssd.wantedBy = lib.mkForce [];
 
@@ -44,7 +46,7 @@ let vars = import ./vars.nix; in
   programs.zsh.enable = true;
   users.users."${vars.user}" = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "audio" ];
+    extraGroups = ["wheel" "video" "audio"];
     shell = pkgs.zsh;
   };
   services.getty.autologinUser = vars.user;

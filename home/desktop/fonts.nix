@@ -1,6 +1,10 @@
-{ config, options, pkgs, vars, ... }:
-
 {
+  config,
+  options,
+  pkgs,
+  vars,
+  ...
+}: {
   gtk = {
     enable = true;
     font = {
@@ -13,7 +17,7 @@
     noto-fonts
     noto-fonts-extra
     noto-fonts-cjk
-    (nerdfonts.override { fonts = ["IBMPlexMono"]; })
+    (nerdfonts.override {fonts = ["IBMPlexMono"];})
   ];
 
   fonts = {

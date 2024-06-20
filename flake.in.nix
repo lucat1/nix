@@ -1,9 +1,10 @@
-let vars = import ./vars.nix; in
-{
+let
+  vars = import ./vars.nix;
+in {
   description = "NixOS configuration";
 
   nixConfig = {
-    experimental-features = [ "nix-command" "flakes" ];
+    experimental-features = ["nix-command" "flakes"];
     substituters = [
       "https://cache.nixos.org"
     ];
@@ -32,31 +33,39 @@ let vars = import ./vars.nix; in
       url = "https://github.com/hyprwm/Hyprland";
       submodules = true;
     };
-
   };
 
-  outputs = inputs@{ nixpkgs, nixos-hardware, home-manager, hyprland, ... }: {
-    nixosConfigurations."${vars.hostname}" = nixpkgs.lib.nixosSystem{
+  outputs = inputs @ {
+    nixpkgs,
+    nixos-hardware,
+    home-manager,
+    hyprland,
+    ...
+  }: {
+    nixosConfigurations."${vars.hostname}" = nixpkgs.lib.nixosSystem {
       system = vars.arch;
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
-      specialArgs = { inherit inputs; };
+      specialArgs = {inherit inputs;};
 
       modules = [
         ./configuration.nix
-          nixos-hardware.nixosModules.lenovo-yoga-7-14ARH7.amdgpu
-# hyprland.homeManagerModules.default
+        nixos-hardware.nixosModules.lenovo-yoga-7-14ARH7.amdgpu
+        # hyprland.homeManagerModules.default
 
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users."${vars.user}" = {
-              imports = [
-                ./home
-              ];
-            };
-            home-manager.extraSpecialArgs = { vars = import ./vars.nix; inputs = inputs; };
-          }
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users."${vars.user}" = {
+            imports = [
+              ./home
+            ];
+          };
+          home-manager.extraSpecialArgs = {
+            vars = import ./vars.nix;
+            inputs = inputs;
+          };
+        }
       ];
     };
   };

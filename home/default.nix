@@ -1,6 +1,10 @@
-{ config, options, pkgs, vars, ... }:
-
 {
+  config,
+  options,
+  pkgs,
+  vars,
+  ...
+}: {
   home.stateVersion = "23.11"; # Do not change
   programs.home-manager.enable = true;
 
@@ -8,9 +12,8 @@
   home.homeDirectory = vars.homeDirectory;
 
   nix = {
-    settings.experimental-features = [ "nix-command" "flakes" ];
+    settings.experimental-features = ["nix-command" "flakes"];
   };
-
 
   imports = [
     ./desktop/xdg.nix
@@ -22,7 +25,7 @@
     ./desktop/kanshi.nix
     ./desktop/waybar.nix
     ./desktop/mako.nix
-    
+
     ./programs/zsh.nix
     ./programs/direnv.nix
     ./programs/ssh.nix
@@ -71,7 +74,7 @@
   programs.zathura.enable = true;
   programs.browserpass = {
     enable = true;
-    browsers = [ "firefox" ];
+    browsers = ["firefox"];
   };
 
   fonts.fontconfig.enable = true;

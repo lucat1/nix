@@ -1,14 +1,18 @@
-{ config, options, pkgs, vars, ... }:
-
 {
+  config,
+  options,
+  pkgs,
+  vars,
+  ...
+}: {
   programs.waybar = {
     enable = true;
     settings = {
       mainBar = {
         position = "bottom";
         height = 22;
-        modules-left = [ "hyprland/workspaces" ];
-        modules-right = [ "hyprland/language" "network" "pulseaudio" "backlight" "battery" "clock" ];
+        modules-left = ["hyprland/workspaces"];
+        modules-right = ["hyprland/language" "network" "pulseaudio" "backlight" "battery" "clock"];
 
         "hyprland/workspaces" = {
           format = "{icon}";
@@ -16,11 +20,11 @@
           on-scroll-down = "hyprctl dispatch workspace e-1";
         };
         "hyprland/language" = {
-	  format-en = "us";
-	  format-en-intl = "us (intl)";
+          format-en = "us";
+          format-en-intl = "us (intl)";
         };
 
-	"network" = {
+        "network" = {
           format-wifi = "";
           format-ethernet = "󰈀";
           format-disconnected = "";
@@ -28,16 +32,16 @@
           tooltip-format = "{ifname}: {ipaddr}/{cidr} via {gwaddr}";
         };
 
-	"pulseaudio" = {
+        "pulseaudio" = {
           format = "{icon} {volume}%";
           format-muted = "󰝟";
-          format-icons = [ "" "" "" ];
+          format-icons = ["" "" ""];
           on-click = "pavucontrol";
         };
-	"backlight" = {
+        "backlight" = {
           format = " {percent}%";
         };
-	"battery" = {
+        "battery" = {
           "states" = {
             good = 95;
             warning = 30;
@@ -46,7 +50,7 @@
           format = "{icon} {capacity}%";
           format-charging = "󰂏 {capacity}%";
           format-plugged = "󰁹 {capacity}%";
-          format-icons = [ " " " " " " " " " " ];
+          format-icons = [" " " " " " " " " "];
         };
       };
 
@@ -57,65 +61,65 @@
     };
 
     style = ''
-        * {
-      border: none;
-      border-radius: 0;
-      font-family: monospace;
-      font-size: ${toString vars.barFontSize}px;
-      min-height: 0;
-    }
-    
-    window#waybar,
-    #mode,
-    #workspaces button,
-    #pulseaudio,
-    #network,
-    #backlight,
-    #battery,
-    #clock {
-      background: #${vars.colors.bg};
-      color: #${vars.colors.fg};
-      padding: 0 8px;
-      margin: 0 8px;
-    }
-    
-    #mode, #workspaces button, #clock {
-      margin: 0;
-    }
-    
-    #mode {
-      color: #${vars.colors.fg};
-      background: #${vars.colors.aqua};
-    }
-    
-    #workspaces button.active,
-    #battery.charging,
-    #battery.plugged {
-      color: #${vars.colors.bg};
-      background: #${vars.colors.aqua};
-    }
-    
-    @keyframes blink {
-      to {
-        color: #${vars.colors.fg};
-        background: #${vars.colors.red};
+          * {
+        border: none;
+        border-radius: 0;
+        font-family: monospace;
+        font-size: ${toString vars.barFontSize}px;
+        min-height: 0;
       }
-    }
-    
-    #battery.warning:not(.charging) {
-      color: #${vars.colors.fg};
-      background: #${vars.colors.yellow};
-    }
-    
-    #battery.critical:not(.charging) {
-      color: #${vars.colors.fg};
-      background: #cc241d;
-      animation-name: blink;
-      animation-duration: 1s;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-      animation-direction: alternate;
-    }
+
+      window#waybar,
+      #mode,
+      #workspaces button,
+      #pulseaudio,
+      #network,
+      #backlight,
+      #battery,
+      #clock {
+        background: #${vars.colors.bg};
+        color: #${vars.colors.fg};
+        padding: 0 8px;
+        margin: 0 8px;
+      }
+
+      #mode, #workspaces button, #clock {
+        margin: 0;
+      }
+
+      #mode {
+        color: #${vars.colors.fg};
+        background: #${vars.colors.aqua};
+      }
+
+      #workspaces button.active,
+      #battery.charging,
+      #battery.plugged {
+        color: #${vars.colors.bg};
+        background: #${vars.colors.aqua};
+      }
+
+      @keyframes blink {
+        to {
+          color: #${vars.colors.fg};
+          background: #${vars.colors.red};
+        }
+      }
+
+      #battery.warning:not(.charging) {
+        color: #${vars.colors.fg};
+        background: #${vars.colors.yellow};
+      }
+
+      #battery.critical:not(.charging) {
+        color: #${vars.colors.fg};
+        background: #cc241d;
+        animation-name: blink;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
     '';
 
     systemd = {
