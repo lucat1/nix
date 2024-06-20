@@ -26,6 +26,7 @@
     ./programs/zsh.nix
     ./programs/direnv.nix
     ./programs/basic.nix
+    ./programs/screen.nix
     ./programs/ssh.nix
     ./programs/gpg.nix
     ./programs/git.nix

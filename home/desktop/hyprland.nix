@@ -40,7 +40,8 @@
       "$mod" = "SUPER";
       bind = 
         [
-        "$mod, Escape, exec, hyprlock -q"
+          "$mod, Escape, exec, hyprlock -q"
+          "$mod&ALT_L, 1, exec, scr"
           "$mod, Space, exec, bemenu-run"
           "$mod, Return, exec, footclient"
           "$mod, w, killactive,"

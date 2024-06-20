@@ -47,6 +47,7 @@ require'visimp'{
     'json',
     'go',
     'rust',
+    'python',
   },
   diagnostics = {},
   -- lspformat = {},
