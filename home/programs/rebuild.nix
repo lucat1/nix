@@ -40,6 +40,7 @@
       current=$(nixos-rebuild list-generations | grep current)
 
       git cm "$current"
+      git push
       popd
       notify-send -e "NixOS Rebuild Successful"
     '';
