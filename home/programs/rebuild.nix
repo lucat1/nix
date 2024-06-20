@@ -29,7 +29,7 @@
 
       # Print changes
       git diff -U0 '*.nix'
-      read -p "Proceed? " -n 1 -r
+      read -p "Proceed [y/N]? " -n 1 -r
       echo
       if [[ ! $REPLY =~ ^[Yy]$ ]]; then exit; fi
       git add .
