@@ -12,6 +12,10 @@
       type = "git";
       url = "https://github.com/hyprwm/Hyprland";
     };
+    nix-index-database = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/nix-index-database";
+    };
     nixlib.url = "github:nix-community/nixpkgs.lib";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";

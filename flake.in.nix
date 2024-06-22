@@ -23,6 +23,11 @@ in {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -38,10 +43,22 @@ in {
   outputs = inputs @ {
     nixpkgs,
     nixos-hardware,
+    nix-index-database,
     home-manager,
     hyprland,
     ...
   }: {
+    # TODO
+    # homeConfigurations."${vars.user}" = let
+    #   pkgs = nixpkgs.legacyPackages.${vars.arch};
+    # in home-manager.lib.homeManagerConfiguration{
+    #   inherit pkgs;
+    #
+    #   modules = [
+    #     nix-index-database.hmModules.nix-index
+    #   ];
+    # };
+
     nixosConfigurations."${vars.hostname}" = nixpkgs.lib.nixosSystem {
       system = vars.arch;
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
@@ -50,7 +67,6 @@ in {
       modules = [
         ./configuration.nix
         nixos-hardware.nixosModules.lenovo-yoga-7-14ARH7.amdgpu
-        # hyprland.homeManagerModules.default
 
         home-manager.nixosModules.home-manager
         {

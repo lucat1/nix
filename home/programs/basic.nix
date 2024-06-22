@@ -9,6 +9,8 @@
     pavucontrol
     imv
     fend
-    comma
   ];
+
+  # TODO
+  # programs.nix-index-database.comma.enable = true;
 }
