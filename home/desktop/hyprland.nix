@@ -63,7 +63,13 @@
               ]
             )
             10)
-        );
+        )
+        ++ [
+          "$mod, h, movefocus, l"
+          "$mod, l, movefocus, r"
+          "$mod, k, movefocus, u"
+          "$mod, j, movefocus, d"
+        ];
       bindle = [
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
         ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 2%+"
@@ -75,6 +81,10 @@
         ", XF86AudioPlay, exec, playerctl stop"
         ", XF86MonBrightnessUp, exec, light -A 2"
         ", XF86MonBrightnessDown, exec, light -U 2"
+      ];
+      bindm = [
+        "$mod, mouse:272, movewindow"
+        "$mod, mouse:273, resizewindow"
       ];
 
       windowrulev2 = [
