@@ -38,7 +38,8 @@
     ./programs/nvim.nix
 
     ./programs/basic.nix
-    ./programs/screen.nix
+    ./programs/bat.nix
+    ./programs/scr.nix
     ./programs/rebuild.nix
   ];
 
