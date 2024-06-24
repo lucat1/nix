@@ -4,6 +4,11 @@
   pkgs,
   ...
 }: {
+  home.packages = with pkgs; [
+    eza
+    bat
+  ];
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -11,6 +16,8 @@
     shellAliases = {
       ls = "eza --header --git";
       ll = "eza -a --long --header --git";
+      cat = "bat -p";
+
       vi = "nvim";
       pass = "gopass";
     };

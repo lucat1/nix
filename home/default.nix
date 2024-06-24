@@ -46,9 +46,7 @@
     zip
     unzip
     xz
-
     jq
-    eza
 
     iperf3
     dnsutils
