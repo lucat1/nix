@@ -60,6 +60,19 @@
           }
         ];
       }
+      {
+        profile.name = "dock-unibo-pizzeria";
+        profile.outputs = [
+          {
+            criteria = builtin_display;
+            position = "0,1080";
+          }
+          {
+            criteria = "Philips Consumer Electronics Company PHL 241B7Q 0x00002854";
+            position = "0,0";
+          }
+        ];
+      }
     ];
   };
 }
