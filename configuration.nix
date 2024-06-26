@@ -69,4 +69,5 @@ in {
   fonts.fontDir.enable = true;
   programs.dconf.enable = true;
   services.tlp.enable = true;
+  programs.nix-ld.enable = true;
 }
