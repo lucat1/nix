@@ -10,7 +10,10 @@
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     settings = {
-      env = ["XCURSOR_SIZE,64"];
+      env = [
+        "XCURSOR_SIZE,32"
+        "HYPRCURSOR_SIZE,32"
+      ];
       animations = {
         enabled = false;
       };
@@ -23,7 +26,7 @@
 
       device = [
         {
-          name = "ce2d-touchpad";
+          name = "msft0003:00-06cb:ce2d-touchpad";
           sensitivity = 0.1;
           accel_profile = "adaptive";
 
