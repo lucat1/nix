@@ -7,6 +7,23 @@
   programs.firefox = {
     enable = true;
 
+    profiles = {
+      default = {
+        userChrome = ''
+          .titlebar-buttonbox-container {
+            display: none
+          }
+
+          #alltabs-button {
+            /*display: none !important;*/
+            right: 0;
+            top: 4px;
+            position: fixed;
+          }
+        '';
+      };
+    };
+
     policies = {
       DisableTelemetry = true;
       DisableFirefoxStudies = true;
