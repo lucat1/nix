@@ -9,6 +9,7 @@
 
     profiles = {
       default = {
+        isDefault = true;
         userChrome = ''
           .titlebar-buttonbox-container {
             display: none
