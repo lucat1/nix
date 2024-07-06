@@ -9,6 +9,8 @@
     pavucontrol
     imv
     fend
+
+    kicad
   ];
 
   # TODO
