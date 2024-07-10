@@ -64,6 +64,7 @@
     gnupg
 
     imagemagick
+    ghostscript # required by previous
   ];
 
   programs.thunderbird = {
