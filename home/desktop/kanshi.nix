@@ -14,8 +14,13 @@
       builtin_display = "eDP-1";
     in [
       {
-        output.criteria = builtin_display;
-        output.scale = 2.0;
+        profile.name = "standalone";
+        profile.outputs = [
+          {
+            criteria = builtin_display;
+            scale = 2.0;
+          }
+        ];
       }
       {
         profile.name = "dock-riccione";
