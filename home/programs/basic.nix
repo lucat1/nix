@@ -10,7 +10,7 @@
     imv
     fend
 
-    kicad
+    # kicad
   ];
 
   # TODO

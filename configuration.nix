@@ -32,6 +32,9 @@ in {
 
   i18n.defaultLocale = "en_US.UTF-8";
   services.printing.enable = true;
+  services.printing.drivers = [
+    pkgs.cnijfilter2
+  ];
   sound.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
