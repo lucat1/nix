@@ -37,6 +37,7 @@ in {
   ];
   sound.enable = true;
   security.rtkit.enable = true;
+  services.dbus.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
