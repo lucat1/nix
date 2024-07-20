@@ -15,6 +15,7 @@
       xdg-desktop-portal-wlr
       xdg-desktop-portal-gtk
     ];
+    configPackages = [pkgs.hyprland];
 
     config = {
       common = {
