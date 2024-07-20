@@ -20,7 +20,6 @@ in {
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05"; # "github:NixOS/nixpkgs/nixos-unstable";
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     # nix-index-database = {
     #   url = "github:nix-community/nix-index-database";
@@ -41,7 +40,6 @@ in {
 
   outputs = inputs @ {
     nixpkgs,
-    nixos-hardware,
     # nix-index-database,
     home-manager,
     # hyprland,
@@ -61,15 +59,10 @@ in {
     nixosConfigurations."${vars.hostname}" = nixpkgs.lib.nixosSystem {
       system = vars.arch;
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
-      # pkgs = import nixpkgs {
-      #   system = "x86_64-linux";
-      #   config.allowUnfree = true;
-      # };
-      specialArgs = {inherit inputs;};
 
       modules = [
+        ./machines/laptop.nix
         ./configuration.nix
-        nixos-hardware.nixosModules.lenovo-yoga-7-14ARH7.amdgpu
 
         home-manager.nixosModules.home-manager
         {

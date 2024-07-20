@@ -15,7 +15,6 @@ in {
 
   system.stateVersion = "23.11"; # Do not change
   system.autoUpgrade.enable = true;
-  hardware.graphics.enable = true;
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -68,11 +67,8 @@ in {
   programs.light.enable = true;
 
   networking.firewall.enable = true;
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
   fonts.fontDir.enable = true;
   programs.dconf.enable = true;
-  services.tlp.enable = true;
   programs.nix-ld = {
     enable = true;
     package = pkgs.nix-ld-rs;
