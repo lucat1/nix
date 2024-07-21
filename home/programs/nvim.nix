@@ -3,6 +3,7 @@
   options,
   pkgs,
   lib,
+  inputs,
   ...
 }: {
   home.file = {
@@ -23,6 +24,7 @@
 
   programs.neovim = {
     enable = true;
+    package = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux.neovim-unwrapped;
     vimAlias = true;
     vimdiffAlias = true;
     defaultEditor = true;

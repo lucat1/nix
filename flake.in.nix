@@ -19,7 +19,8 @@ in {
   };
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05"; # "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     # nix-index-database = {
     #   url = "github:nix-community/nix-index-database";
@@ -30,19 +31,12 @@ in {
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # hyprland = {
-    #   type = "git";
-    #   url = "https://github.com/hyprwm/Hyprland";
-    #   submodules = true;
-    # };
   };
 
   outputs = inputs @ {
     nixpkgs,
     # nix-index-database,
     home-manager,
-    # hyprland,
     ...
   }: {
     # TODO
