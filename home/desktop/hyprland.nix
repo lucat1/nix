@@ -101,16 +101,16 @@
     };
   };
 
-  systemd.user.services.hyprland = {
-    Unit = {
-      Description = "Hyprland";
-    };
-    Install = {
-      WantedBy = ["default.target"];
-    };
-    Service = {
-      ExecStart = "${pkgs.hyprland}/bin/Hyprland";
-      Restart = "always";
-    };
-  };
+  # systemd.user.services.hyprland = {
+  #   Unit = {
+  #     Description = "Hyprland";
+  #   };
+  #   Install = {
+  #     WantedBy = ["default.target"];
+  #   };
+  #   Service = {
+  #     ExecStart = "${pkgs.hyprland}/bin/Hyprland";
+  #     Restart = "always";
+  #   };
+  # };
 }
