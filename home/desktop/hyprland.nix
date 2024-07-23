@@ -109,7 +109,8 @@
       WantedBy = ["default.target"];
     };
     Service = {
-      ExecStart = pkgs.hyprland;
+      ExecStart = "${pkgs.hyprland}/bin/Hyprland";
+      Restart = "always";
     };
   };
 }
