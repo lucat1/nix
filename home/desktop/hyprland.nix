@@ -100,4 +100,16 @@
       variables = ["--all"];
     };
   };
+
+  systemd.user.services.hyprland = {
+    Unit = {
+      Description = "Hyprland";
+    };
+    Install = {
+      WantedBy = ["default.target"];
+    };
+    Service = {
+      ExecStart = pkgs.hyprland;
+    };
+  };
 }
