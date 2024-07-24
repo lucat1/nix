@@ -81,6 +81,10 @@
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/browserpass-ce/latest.xpi";
           installation_mode = "force_installed";
         };
+        "addon@fastforward.team.xpi" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/fastforwardteam/latest.xpi";
+          installation_mode = "force_installed";
+        };
       };
     };
   };
