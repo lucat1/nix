@@ -45,6 +45,12 @@ in {
     pulse.enable = true;
     jack.enable = true;
     wireplumber.enable = true;
+    extraConfig.pipewire.adjust-sample-rate = {
+      "context.properties" = {
+        "default.clock.rate" = 48000;
+        "defautlt.allowed-rates" = [192000 48000];
+      };
+    };
   };
 
   programs.zsh.enable = true;
