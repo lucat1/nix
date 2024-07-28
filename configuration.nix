@@ -47,8 +47,8 @@ in {
     wireplumber.enable = true;
     extraConfig.pipewire.adjust-sample-rate = {
       "context.properties" = {
-        "default.clock.rate" = 44100;
-        "defautlt.allowed-rates" = [192000 48000 44100];
+        "default.clock.rate" = 48000;
+        "defautlt.allowed-rates" = [192000 176400 96000 88200 48000 44100];
       };
     };
   };
