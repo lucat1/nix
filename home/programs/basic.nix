@@ -8,6 +8,7 @@
     wl-clipboard
     pavucontrol
     imv
+    yazi
     fend
 
     # kicad
