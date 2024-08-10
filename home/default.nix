@@ -25,6 +25,7 @@
     ./desktop/kanshi.nix
     ./desktop/waybar.nix
     ./desktop/mako.nix
+    ./desktop/sunset.nix
 
     ./programs/zsh.nix
     ./programs/direnv.nix
