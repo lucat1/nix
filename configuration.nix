@@ -54,9 +54,10 @@ in {
   };
 
   programs.zsh.enable = true;
+  users.groups."${vars.user}" = {};
   users.users."${vars.user}" = {
     isNormalUser = true;
-    extraGroups = ["wheel" "video" "audio"];
+    extraGroups = ["wheel" "video" "audio" vars.user];
     shell = pkgs.zsh;
   };
   services.getty.autologinUser = vars.user;
