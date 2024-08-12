@@ -17,8 +17,6 @@
       ll = "eza -a --long --header --git";
       cat = "bat -p";
       gd = "git diff --name-only --relative --diff-filter=d | xargs bat --diff";
-
-      vi = "nvim";
     };
 
     prezto = {
