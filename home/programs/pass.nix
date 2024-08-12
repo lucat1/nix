@@ -7,7 +7,7 @@
 }: {
   programs.password-store = {
     enable = true;
-    package = pkgs.gopass;
+    package = pkgs.gopass.override {passAlias = true;};
   };
 
   programs.browserpass = {
