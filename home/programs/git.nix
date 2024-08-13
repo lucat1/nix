@@ -2,12 +2,13 @@
   config,
   options,
   pkgs,
+  vars,
   ...
 }: {
   programs.git = {
     enable = true;
-    userName = "Luca";
-    userEmail = "luca@teapot.ovh";
+    userName = vars.firstName;
+    userEmail = vars.email;
 
     signing = {
       key = "3133FC373370010F";

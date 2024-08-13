@@ -30,4 +30,14 @@
     [age]
     	usekeychain = false
   '';
+
+  programs.rbw = {
+    enable = true;
+
+    settings = {
+      email = vars.email;
+      base_url = "https://vault.teapot.ovh";
+      pinentry = pkgs.pinentry-bemenu;
+    };
+  };
 }

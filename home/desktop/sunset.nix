@@ -9,7 +9,7 @@
     enable = true;
 
     # Zürich coordinates
-    latitude = 47.35953600;
-    longitude = 8.63564520;
+    latitude = "47.35953600";
+    longitude = "8.63564520";
   };
 }

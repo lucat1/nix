@@ -1,6 +1,8 @@
 rec {
   hostname = "voodoo";
   user = "luca";
+  firstName = "Luca";
+  email = "luca@teapot.ovh";
   homeDirectory = "/home/${user}";
   arch = "x86_64-linux";
 
