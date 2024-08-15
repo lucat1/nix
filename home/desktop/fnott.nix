@@ -11,7 +11,7 @@
       main = {
         anchor = "bottom-right";
         selection-helper = "bemenu";
-        dpi-aware = "no";
+        dpi-aware = "yes";
 
         body-font = vars.fontFamilies.monospace;
         title-font = vars.fontFamilies.monospace;
