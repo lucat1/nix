@@ -24,7 +24,7 @@
     ./desktop/hyprpaper.nix
     ./desktop/kanshi.nix
     ./desktop/waybar.nix
-    ./desktop/mako.nix
+    ./desktop/fnott.nix
     ./desktop/sunset.nix
 
     ./programs/zsh.nix
