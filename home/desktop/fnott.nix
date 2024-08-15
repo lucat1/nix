@@ -10,7 +10,7 @@
     settings = {
       main = {
         anchor = "bottom-right";
-        selector-helper = "bemenu";
+        selection-helper = "bemenu";
         dpi-aware = "no";
 
         body-font = vars.fontFamilies.monospace;
