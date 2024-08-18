@@ -60,8 +60,17 @@ in {
     extraGroups = ["wheel" "video" "audio" vars.user];
     shell = pkgs.zsh;
   };
-  services.getty.autologinUser = vars.user;
   security.sudo.wheelNeedsPassword = false;
+  services.greetd = {
+    enable = true;
+    settings = rec {
+      initial_session = {
+        command = "${pkgs.hyprland}/bin/Hyprland";
+        user = vars.user;
+      };
+      default_session = initial_session;
+    };
+  };
 
   environment.systemPackages = with pkgs; [
     neovim
