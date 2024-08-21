@@ -14,12 +14,17 @@
       modifier = "Mod4";
 
       window = {
-        hideEdgeBorders = "none";
+        hideEdgeBorders = "smart";
         border = 2;
         titlebar = false;
       };
 
-      gaps = {
+      gaps = let
+        gap = 2;
+      in {
+        outer = gap;
+        inner = gap / 2;
+        smartGaps = true;
         smartBorders = "no_gaps";
       };
 
