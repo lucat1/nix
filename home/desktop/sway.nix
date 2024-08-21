@@ -25,7 +25,7 @@
         outer = gap;
         inner = gap * 2;
         smartGaps = true;
-        smartBorders = "no_gaps";
+        smartBorders = "on";
       };
 
       terminal = "${pkgs.foot}/bin/foot";
