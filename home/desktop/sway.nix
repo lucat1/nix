@@ -1,0 +1,23 @@
+{
+  config,
+  options,
+  pkgs,
+  lib,
+  inputs,
+  ...
+}: {
+  wayland.windowManager.sway = {
+    enable = true;
+    xwayland = true;
+
+    config = {
+      terminal = "${pkgs.foot}/bin/foot";
+      menu = "${pkgs.bemenu}/bin/bemenu-run --no-exec | ${pkgs.findutils}/bin/xargs swaymsg exec --";
+    };
+
+    systemd = {
+      enable = true;
+      variables = ["--all"];
+    };
+  };
+}

@@ -19,7 +19,8 @@
     ./desktop/xdg.nix
     ./desktop/dark.nix
     ./desktop/fonts.nix
-    ./desktop/hyprland.nix
+    # ./desktop/hyprland.nix
+    ./desktop/sway.nix
     ./desktop/hyprlock.nix
     ./desktop/hyprpaper.nix
     ./desktop/kanshi.nix
