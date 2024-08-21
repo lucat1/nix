@@ -25,7 +25,7 @@
     ];
 
     config = {
-      hyprland = {
+      sway = {
         default = [
           "wlr"
           "gtk"
