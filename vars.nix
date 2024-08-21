@@ -16,7 +16,7 @@ rec {
   colors = rec {
     bg0 = "282828";
     bg0_hard = "1d2021";
-    bg = bg0;
+    bg = bg0_hard;
     fg = "ebdbb2";
 
     aqua = "689d6a";
