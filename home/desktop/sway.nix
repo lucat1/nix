@@ -20,7 +20,7 @@
       };
 
       gaps = let
-        gap = 2;
+        gap = 6;
       in {
         outer = gap;
         inner = gap / 2;
