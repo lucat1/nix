@@ -21,7 +21,6 @@
 
     systemd = {
       enable = true;
-      variables = ["--all"];
     };
   };
 }
