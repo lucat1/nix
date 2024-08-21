@@ -11,10 +11,16 @@
     settings = {
       main = {
         font = "monospace:size=${toString vars.fontSize}";
-        dpi-aware = "no";
+        dpi-aware = false;
+        pad = "4x4 center";
+      };
+      url = {
+        launch = "${pkgs.xdg-utils}/bin/xdg-open \${url}";
+        protocols = "http,https,mailto";
       };
       mouse = {
-        hide-when-typing = "yes";
+        hide-when-typing = true;
+        alternate-scroll-mode = true;
       };
     };
   };
