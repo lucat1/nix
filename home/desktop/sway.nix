@@ -23,7 +23,7 @@
         gap = 4;
       in {
         outer = gap;
-        inner = gap;
+        inner = gap * 2;
         smartGaps = true;
         smartBorders = "no_gaps";
       };
