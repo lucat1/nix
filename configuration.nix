@@ -75,6 +75,8 @@ in {
       default_session = initial_session;
     };
   };
+  # To make xdg-desktop-portal installed by home-manager work
+  environment.pathsToLink = ["/share/xdg-desktop-portal" "/share/applications"];
 
   environment.systemPackages = with pkgs; [
     neovim
