@@ -20,10 +20,10 @@
       };
 
       gaps = let
-        gap = 6;
+        gap = 4;
       in {
         outer = gap;
-        inner = gap - 2;
+        inner = gap;
         smartGaps = true;
         smartBorders = "no_gaps";
       };
