@@ -82,6 +82,11 @@ in {
     pciutils
   ];
   programs.light.enable = true;
+  services.locate = {
+    enable = true;
+    package = pkgs.plocate;
+    interval = "12:00";
+  };
 
   networking.firewall.enable = true;
   fonts.fontDir.enable = true;
