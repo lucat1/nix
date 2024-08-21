@@ -13,10 +13,11 @@
     enableCompletion = true;
 
     shellAliases = {
-      ls = "eza --header --git";
-      ll = "eza -a --long --header --git";
-      cat = "bat -p";
-      gd = "git diff --name-only --relative --diff-filter=d | xargs bat --diff";
+      ls = "${pkgs.eza}/bin/eza --header --git";
+      ll = "${pkgs.eza}/bin/eza -a --long --header --git";
+      cat = "${pkgs.bat}/bin/bat -p";
+      gd = "${pkgs.git}/bin/git diff --name-only --relative --diff-filter=d | ${pkgs.findutils}/bin/xargs ${pkgs.bat}/bin/bat --diff";
+      dir = "${pkgs.yazi}/bin/yazi";
     };
 
     prezto = {
