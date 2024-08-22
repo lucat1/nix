@@ -18,8 +18,7 @@
           format = "{icon}";
         };
         "sway/language" = {
-          format-en = "us";
-          format-en-intl = "us (intl)";
+          format = "{short} ({variant})";
         };
 
         "network" = {

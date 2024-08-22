@@ -32,7 +32,7 @@
           pointer_accel = "0.1";
         };
         "type:keyboard" = {
-          repeat_rate = "60";
+          repeat_rate = "40";
           repeat_delay = "300";
           xkb_layout = "us,us(intl)";
           xkb_options = "grp:shifts_toggle,caps:escape";
