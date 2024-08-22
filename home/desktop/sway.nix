@@ -23,6 +23,22 @@
     config = rec {
       modifier = "Mod4";
 
+      input = {
+        "type:touchpad" = {
+          tap = "enabled";
+          natural_scroll = "enabled";
+          scroll_factor = "0.3";
+          accel_profile = "adaptive";
+          pointer_accel = "0.1";
+        };
+        "type:keyboard" = {
+          repeat_rate = "60";
+          repeat_delay = "300";
+          xkb_layout = "us,us(intl)";
+          xkb_options = "grp:shifts_toggle,caps:escape";
+        };
+      };
+
       window = {
         hideEdgeBorders = "smart";
         border = 2;
