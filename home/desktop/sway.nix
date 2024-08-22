@@ -61,6 +61,8 @@
         "${modifier}+w" = "kill";
         "${modifier}+space" = "exec ${menu}";
         "${modifier}+d" = null;
+        "${modifier}+f" = "floating toggle";
+        "${modifier}+Shift+f" = "fullscreen";
       };
       bars = [];
     };

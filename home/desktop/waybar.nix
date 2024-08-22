@@ -30,7 +30,7 @@
           tooltip-format-ethernet = "{ifname}: {ipaddr}/{cidr} via {gwaddr}";
         };
 
-        "pulseaudio" = {
+        "wireplumber" = {
           format = "{icon} {volume}%";
           format-muted = "󰝟";
           format-icons = ["" "" ""];
