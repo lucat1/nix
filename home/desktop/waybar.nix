@@ -30,7 +30,7 @@
           tooltip-format-ethernet = "{ifname}: {ipaddr}/{cidr} via {gwaddr}";
         };
 
-        "wireplumber" = {
+        "pulseaudio" = {
           format = "{icon} {volume}%";
           format-muted = "󰝟";
           format-icons = ["" "" ""];
@@ -43,7 +43,7 @@
           "states" = {
             good = 95;
             warning = 30;
-            critical = 2;
+            critical = 5;
           };
           format = "{icon} {capacity}%";
           format-charging = "󰂏 {capacity}%";
