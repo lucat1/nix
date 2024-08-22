@@ -11,15 +11,15 @@
       mainBar = {
         position = "bottom";
         height = 22;
-        modules-left = ["hyprland/workspaces"];
-        modules-right = ["hyprland/language" "network" "pulseaudio" "backlight" "battery" "clock"];
+        modules-left = ["sway/workspaces"];
+        modules-right = ["sway/language" "network" "pulseaudio" "backlight" "battery" "clock"];
 
-        "hyprland/workspaces" = {
+        "sway/workspaces" = {
           format = "{icon}";
           on-scroll-up = "hyprctl dispatch workspace e+1";
           on-scroll-down = "hyprctl dispatch workspace e-1";
         };
-        "hyprland/language" = {
+        "sway/language" = {
           format-en = "us";
           format-en-intl = "us (intl)";
         };
@@ -52,11 +52,10 @@
           format-plugged = "󰁹 {capacity}%";
           format-icons = [" " " " " " " " " "];
         };
-      };
-
-      "clock" = {
-        tooltip-format = "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>";
-        format-alt = "{:%Y-%m-%d}";
+        "clock" = {
+          tooltip-format = "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>";
+          format-alt = "{:%Y-%m-%d}";
+        };
       };
     };
 
