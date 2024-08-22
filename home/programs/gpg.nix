@@ -16,5 +16,6 @@
   services.gpg-agent = {
     enable = true;
     pinentryPackage = pkgs.pinentry-bemenu;
+    defaultCacheTtl = 24 * 60 * 60; # one day
   };
 }

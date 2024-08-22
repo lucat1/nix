@@ -15,13 +15,6 @@
     };
   };
 
-  home.packages = with pkgs; [
-    gcc
-    go
-    tree-sitter
-    nodejs
-  ];
-
   programs.neovim = {
     enable = true;
     package = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux.neovim-unwrapped;
@@ -29,6 +22,13 @@
     vimAlias = true;
     vimdiffAlias = true;
     defaultEditor = true;
+
+    extraPackages = with pkgs; [
+      gcc
+      go
+      tree-sitter
+      nodejs
+    ];
 
     extraLuaConfig = ''
       require'visimp'{
