@@ -77,4 +77,8 @@
       enable = true;
     };
   };
+
+  home.packages = with pkgs; [
+    wl-mirror
+  ];
 }
