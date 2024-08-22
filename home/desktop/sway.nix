@@ -67,12 +67,10 @@
 
       bars = [];
 
-      startup = [
-        {
-          command = "${pkgs.systemd}/bin/systemctl --user reload-or-restart kanshi.service";
-          always = true;
-        }
-      ];
+      startup = map (service: {
+        command = "${pkgs.systemd}/bin/systemctl --user reload-or-restart ${service}.service";
+        always = true;
+      }) ["kanshi" "waybar"];
     };
 
     systemd = {
