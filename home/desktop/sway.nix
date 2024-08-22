@@ -20,7 +20,7 @@
     enable = true;
     xwayland = true;
 
-    config = {
+    config = rec {
       modifier = "Mod4";
 
       window = {
@@ -41,6 +41,11 @@
       terminal = "${pkgs.foot}/bin/foot";
       menu = "${pkgs.bemenu}/bin/bemenu-run --no-exec | ${pkgs.findutils}/bin/xargs swaymsg exec --";
 
+      keybindings = lib.mkOptionDefault {
+        "${modifier}+w" = "kill";
+        "${modifier}+Space" = "exec ${menu}";
+        "${modifier}+d" = null;
+      };
       bars = [];
     };
 
