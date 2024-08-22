@@ -43,7 +43,7 @@
 
       keybindings = lib.mkOptionDefault {
         "${modifier}+w" = "kill";
-        "${modifier}+Space" = "exec ${menu}";
+        "${modifier}+space" = "exec ${menu}";
         "${modifier}+d" = null;
       };
       bars = [];
