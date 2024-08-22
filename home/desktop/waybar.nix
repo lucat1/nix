@@ -16,8 +16,6 @@
 
         "sway/workspaces" = {
           format = "{icon}";
-          on-scroll-up = "hyprctl dispatch workspace e+1";
-          on-scroll-down = "hyprctl dispatch workspace e-1";
         };
         "sway/language" = {
           format-en = "us";
@@ -28,15 +26,15 @@
           format-wifi = "";
           format-ethernet = "󰈀";
           format-disconnected = "";
-          on-click = "footclient nmtui";
-          tooltip-format = "{ifname}: {ipaddr}/{cidr} via {gwaddr}";
+          on-click = "${pkgs.foot}/bin/footclient ${pkgs.networkmanager}/bin/nmtui";
+          tooltip-format = "{ifname} ({essid}): {ipaddr}/{cidr} via {gwaddr}";
         };
 
         "pulseaudio" = {
           format = "{icon} {volume}%";
           format-muted = "󰝟";
           format-icons = ["" "" ""];
-          on-click = "pavucontrol";
+          on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
         };
         "backlight" = {
           format = " {percent}%";
