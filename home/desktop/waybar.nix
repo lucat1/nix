@@ -91,7 +91,7 @@
         background: #${vars.colors.aqua};
       }
 
-      #workspaces button.active,
+      #workspaces button.focused,
       #battery.charging,
       #battery.plugged {
         color: #${vars.colors.bg};
