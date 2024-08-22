@@ -64,7 +64,15 @@
         "${modifier}+f" = "floating toggle";
         "${modifier}+Shift+f" = "fullscreen";
       };
+
       bars = [];
+
+      startup = [
+        {
+          command = "${pkgs.systemd}/bin/systemctl --user reload-or-restart kanshi.service";
+          always = true;
+        }
+      ];
     };
 
     systemd = {
