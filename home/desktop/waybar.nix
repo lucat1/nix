@@ -18,7 +18,7 @@
           format = "{icon}";
         };
         "sway/language" = {
-          format = "{short} ({variant})";
+          format = "{flag} {variant}";
         };
 
         "network" = {
