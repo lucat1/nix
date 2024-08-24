@@ -57,13 +57,18 @@
       terminal = "${pkgs.foot}/bin/foot";
       menu = "${pkgs.bemenu}/bin/bemenu-run --no-exec | ${pkgs.findutils}/bin/xargs swaymsg exec --";
 
-      keybindings = lib.mkOptionDefault {
-        "${modifier}+w" = "kill";
-        "${modifier}+space" = "exec ${menu}";
-        "${modifier}+d" = null;
-        "${modifier}+f" = "floating toggle";
-        "${modifier}+Shift+f" = "fullscreen";
-      };
+      keybindings = let
+        scr = import ../scripts/scr.nix;
+      in
+        lib.mkOptionDefault {
+          "${modifier}+w" = "kill";
+          "${modifier}+space" = "exec ${menu}";
+          "${modifier}+d" = null;
+          "${modifier}+f" = "floating toggle";
+          "${modifier}+Shift+f" = "fullscreen";
+
+          "${modifier}+Alt+1" = "exec ${lib.getExe (scr {pkgs = pkgs;})}";
+        };
 
       bars = [];
 
