@@ -91,6 +91,7 @@ in {
   services.locate = {
     enable = true;
     package = pkgs.plocate;
+    localuser = null;
     interval = "12:00";
   };
 
