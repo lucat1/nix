@@ -41,8 +41,6 @@
 
     ./programs/basic.nix
     ./programs/bat.nix
-    ./programs/scr.nix
-    ./programs/rebuild.nix
   ];
 
   home.packages = with pkgs; [

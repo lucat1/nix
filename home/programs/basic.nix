@@ -3,15 +3,21 @@
   options,
   pkgs,
   ...
-}: {
+}: let
+  scr = import ../scripts/scr.nix;
+  rebuild = import ../scripts/rebuild.nix;
+in {
   home.packages = with pkgs; [
     wl-clipboard
     pavucontrol
     imv
-    yazi
+    imv
     fend
 
     # kicad
+
+    (scr {pkgs = pkgs;})
+    (rebuild {pkgs = pkgs;})
   ];
 
   # TODO
