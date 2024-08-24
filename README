@@ -2,6 +2,10 @@ To save space, by converting symlinks to hard links:
 
 $ nix-store --optimise
 
+To remove old (>2 days) builds:
+
+$ sudo nix-collect-garbage -d --delete-older-than 2d
+
 To update the whole system:
 
 $ sudo nixos-rebuild switch --upgrade \

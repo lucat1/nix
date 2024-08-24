@@ -24,6 +24,5 @@ in {
     enable = true;
     enableZshIntegration = true;
   };
-  # TODO
-  # programs.nix-index-database.comma.enable = true;
+  programs.nix-index-database.comma.enable = true;
 }
