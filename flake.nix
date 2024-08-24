@@ -59,7 +59,7 @@
             nix-index-database.hmModules.nix-index
           ];
           home-manager.extraSpecialArgs = {
-            vars = import ./vars.nix;
+            vars = vars;
             inputs = inputs;
           };
         }
