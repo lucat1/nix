@@ -11,7 +11,6 @@ in {
     wl-clipboard
     pavucontrol
     imv
-    imv
     fend
 
     # kicad

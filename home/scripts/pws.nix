@@ -32,12 +32,12 @@ pkgs.writeShellApplication {
       exit 1
     fi
 
-    fields="Password\nUsername"
+    fields="password\nusername"
     totp=$(echo "$json" | jq ".data.totp")
     if [ "$totp" != "null" ]; then
-      fields="Password\nUsername\nOTP"
+      fields="password\nusername\notp"
     fi
-    field=$(echo -e "$fields" | bemenu | tr '[:upper:]' '[:lower:]')
+    field=$(echo -e "$fields" | bemenu --auto-select)
 
     if [ "$field" == "otp" ]; then
       rbw_action "code" | wl-copy -o
