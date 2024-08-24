@@ -3,7 +3,7 @@
   options,
   pkgs,
   lib,
-  inputs,
+  vars,
   ...
 }: {
   home.pointerCursor = {
@@ -55,11 +55,16 @@
       };
 
       terminal = "${pkgs.foot}/bin/foot";
-      menu = "${pkgs.bemenu}/bin/bemenu-run --no-exec | ${pkgs.findutils}/bin/xargs swaymsg exec --";
+      menu = let
+        menu = (import ../scripts/menu.nix) {
+          pkgs = pkgs;
+          vars = vars;
+        };
+      in "${lib.getExe menu} ${pkgs.bemenu}/bin/bemenu-run --no-exec | ${pkgs.findutils}/bin/xargs swaymsg exec --";
 
       keybindings = let
-        scr = import ../scripts/scr.nix;
-        pws = import ../scripts/pws.nix;
+        scr = (import ../scripts/scr.nix) {pkgs = pkgs;};
+        pws = (import ../scripts/pws.nix) {pkgs = pkgs;};
       in
         lib.mkOptionDefault {
           "${modifier}+w" = "kill";
@@ -68,8 +73,8 @@
           "${modifier}+f" = "floating toggle";
           "${modifier}+Shift+f" = "fullscreen";
 
-          "${modifier}+Alt+1" = "exec ${lib.getExe (scr {pkgs = pkgs;})}";
-          "${modifier}+p" = "exec ${lib.getExe (pws {pkgs = pkgs;})}";
+          "${modifier}+Alt+1" = "exec ${lib.getExe scr}";
+          "${modifier}+p" = "exec ${lib.getExe pws}";
         };
 
       bars = [];
