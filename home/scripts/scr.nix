@@ -17,9 +17,10 @@ pkgs.writeShellApplication {
     fi
 
     date=$(date +%m-%d-%y--%H-%M-%S.png)
-    grim -g "$(slurp -d)" "$dir/$date"
+    file="$dir/$date"
+    grim -g "$(slurp -d)" "$file"
 
-    size=$(du -sh "$dir/$date" | awk '{print $1}')
-    notify-send -t 5000 "screenshot taken - $size" "$date"
+    size=$(du -sh "$file" | cut -f1)
+    notify-send -t 2500 "Screenshot Taken - $size" "$file"
   '';
 }

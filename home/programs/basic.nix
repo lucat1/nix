@@ -16,7 +16,6 @@ in {
 
     # kicad
 
-    (scr {pkgs = pkgs;})
     (rebuild {pkgs = pkgs;})
   ];
 

@@ -59,6 +59,7 @@
 
       keybindings = let
         scr = import ../scripts/scr.nix;
+        pws = import ../scripts/pws.nix;
       in
         lib.mkOptionDefault {
           "${modifier}+w" = "kill";
@@ -68,6 +69,7 @@
           "${modifier}+Shift+f" = "fullscreen";
 
           "${modifier}+Alt+1" = "exec ${lib.getExe (scr {pkgs = pkgs;})}";
+          "${modifier}+p" = "exec ${lib.getExe (pws {pkgs = pkgs;})}";
         };
 
       bars = [];
