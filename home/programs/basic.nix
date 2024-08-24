@@ -20,6 +20,10 @@ in {
     (rebuild {pkgs = pkgs;})
   ];
 
+  programs.nix-index = {
+    enable = true;
+    enableZshIntegration = true;
+  };
   # TODO
   # programs.nix-index-database.comma.enable = true;
 }
