@@ -37,6 +37,7 @@
     settings = {
       email = vars.email;
       base_url = "https://vault.teapot.ovh";
+      lock_timeout = 60 * 60; # 1 hour
       pinentry = pkgs.pinentry-bemenu;
     };
   };
