@@ -1,3 +1,10 @@
 To save space, by converting symlinks to hard links:
 
 $ nix-store --optimise
+
+To update the whole system:
+
+$ sudo nixos-rebuild switch --upgrade \
+  --update-input nixpkgs \
+  --update-input home-manager \
+  --update-input nix-index-database
