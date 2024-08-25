@@ -20,7 +20,7 @@ pkgs.writeShellApplication {
       --nb "#${vars.colors.bg}" --hb "#${vars.colors.bg0}" --ab "#${vars.colors.bg}" \
       --sb "#${vars.colors.bg}" --scb "#${vars.colors.bg}" \
       --tf "#${vars.colors.bg}" --ff "#${vars.colors.fg}" \
-      --nf "#${vars.colors.fg}" --hf "#${vars.colors.aqua}" \
+      --nf "#${vars.colors.fg}" --hf "#${vars.colors.aqua}" --af "#${vars.colors.fg}" \
       --sf "#${vars.colors.aqua}" --scf "#${vars.colors.purple}" \
       "${rest}"
   '';
