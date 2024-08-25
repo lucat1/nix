@@ -10,7 +10,9 @@ pkgs.writeShellApplication {
     bemenu
   ];
 
-  text = ''
+  text = let
+    rest = "\${@:2}";
+  in ''
     $1 --fn "monospace ${toString vars.fontSize}" \
       --scrollbar autohide -l "10 down" --fixed-height --center \
       -W .75 -M 100 -B 2 --bdr "#${vars.colors.aqua}" \
@@ -20,6 +22,6 @@ pkgs.writeShellApplication {
       --tf "#${vars.colors.bg}" --ff "#${vars.colors.fg}" \
       --nf "#${vars.colors.fg}" --hf "#${vars.colors.aqua}" \
       --sf "#${vars.colors.aqua}" --scf "#${vars.colors.fg}" \
-      "$${@:2}"
+      "${rest}"
   '';
 }
