@@ -43,12 +43,12 @@ in
         exit 1
       fi
 
-      fields="password\nusername"
+      fields="Password\nUsername"
       totp=$(echo "$json" | jq ".data.totp")
       if [ "$totp" != "null" ]; then
-        fields="password\nusername\notp"
+        fields="Password\nUsername\nOTP"
       fi
-      field=$(echo -e "$fields" | menmu bemenu --auto-select -p action)
+      field=$(echo -e "$fields" | menu bemenu --auto-select -p action | tr '[:upper:]' '[:lower:]')
 
       if [ "$field" == "otp" ]; then
         rbw_action "code" | wl-copy -o

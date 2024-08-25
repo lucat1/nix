@@ -13,7 +13,7 @@ pkgs.writeShellApplication {
   text = let
     rest = "\${@:2}";
   in ''
-    $1 --fn "monospace ${toString vars.fontSize}" \
+    $1 -i --fn "monospace ${toString vars.fontSize}" \
       -l "10 down" --fixed-height --center \
       -W .75 -M 100 -B 2 --bdr "#${vars.colors.aqua}" \
       --tb "#${vars.colors.aqua}" --fb "#${vars.colors.bg}" \
