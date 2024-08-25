@@ -20,6 +20,6 @@ pkgs.writeShellApplication {
       --tf "#${vars.colors.bg}" --ff "#${vars.colors.fg}" \
       --nf "#${vars.colors.fg}" --hf "#${vars.colors.aqua}" \
       --sf "#${vars.colors.aqua}" --scf "#${vars.colors.fg}" \
-      "{@:2}"
+      "$${@:2}"
   '';
 }
