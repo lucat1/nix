@@ -60,7 +60,7 @@
           pkgs = pkgs;
           vars = vars;
         };
-      in "${lib.getExe menu} ${pkgs.bemenu}/bin/bemenu-run --no-exec | ${pkgs.findutils}/bin/xargs swaymsg exec --";
+      in "${lib.getExe menu} ${pkgs.bemenu}/bin/bemenu-run --no-exec -p run | ${pkgs.findutils}/bin/xargs swaymsg exec --";
 
       keybindings = let
         scr = (import ../scripts/scr.nix) {pkgs = pkgs;};
