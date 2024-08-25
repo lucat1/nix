@@ -64,7 +64,11 @@
 
       keybindings = let
         scr = (import ../scripts/scr.nix) {pkgs = pkgs;};
-        pws = (import ../scripts/pws.nix) {pkgs = pkgs;};
+        pws = (import ../scripts/pws.nix) {
+          lib = lib;
+          pkgs = pkgs;
+          vars = vars;
+        };
       in
         lib.mkOptionDefault {
           "${modifier}+w" = "kill";
