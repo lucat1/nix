@@ -79,7 +79,7 @@
 
           "${modifier}+Alt+1" = "exec ${lib.getExe scr}";
           "${modifier}+p" = "exec ${lib.getExe pws}";
-          "${modifier}+Escape" = "${lib.getExe' pkgs.systemd "loginctl"} lock-session";
+          "${modifier}+Escape" = "${lib.getExe pkgs.foot} -H ${lib.getExe' pkgs.systemd "loginctl"} list-sessions";
         };
 
       bars = [];
