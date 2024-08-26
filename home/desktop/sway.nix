@@ -79,6 +79,7 @@
 
           "${modifier}+Alt+1" = "exec ${lib.getExe scr}";
           "${modifier}+p" = "exec ${lib.getExe pws}";
+          "${modifier}+Escape" = "exec ${lib.getBin pkgs.hyprlock}";
         };
 
       bars = [];

@@ -12,7 +12,8 @@
         disable_loading_bar = true;
         grace = 0;
         hide_cursor = false;
-        no_fade_in = false;
+        immediate_render = true;
+        no_fade_in = true;
         no_fade_out = true;
       };
 
