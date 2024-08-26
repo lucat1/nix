@@ -54,13 +54,13 @@
         smartBorders = "on";
       };
 
-      terminal = "${pkgs.foot}/bin/foot";
+      terminal = "${lib.getExe pkgs.foot}";
       menu = let
         menu = (import ../scripts/menu.nix) {
           pkgs = pkgs;
           vars = vars;
         };
-      in "${lib.getExe menu} ${pkgs.bemenu}/bin/bemenu-run --no-exec -p run | ${pkgs.findutils}/bin/xargs swaymsg exec --";
+      in "${lib.getExe menu} ${lib.getExe' pkgs.bemenu "bemenu-run"} --no-exec -p run | ${lib.getExe' pkgs.findutils "xargs"} ${lib.getExe' pkgs.sway "swaymsg"} exec --";
 
       keybindings = let
         scr = (import ../scripts/scr.nix) {pkgs = pkgs;};
@@ -85,7 +85,7 @@
       bars = [];
 
       startup = map (service: {
-        command = "${pkgs.systemd}/bin/systemctl --user reload-or-restart ${service}.service";
+        command = "${lib.getExe' pkgs.systemd "systemctl"} --user reload-or-restart ${service}.service";
         always = true;
       }) ["kanshi" "waybar"];
     };
