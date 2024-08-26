@@ -79,8 +79,7 @@
 
           "${modifier}+Alt+1" = "exec ${lib.getExe scr}";
           "${modifier}+p" = "exec ${lib.getExe pws}";
-          # Ideally, this should be `loginctl lock-session` but it's not working
-          "${modifier}+Escape" = "exec ${lib.getExe pkgs.hyprlock}";
+          "${modifier}+Escape" = "exec ${lib.getExe' pkgs.systemd "loginctl"} lock-session";
         };
 
       bars = [];
