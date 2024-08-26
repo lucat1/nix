@@ -16,15 +16,18 @@
   };
 
   imports = [
+    # ./desktop/hyprland.nix
+    ./desktop/sway.nix
+
     ./desktop/xdg.nix
     ./desktop/dark.nix
     ./desktop/fonts.nix
-    # ./desktop/hyprland.nix
-    ./desktop/sway.nix
+
     ./desktop/hyprlock.nix
-    ./desktop/hyprpaper.nix
-    ./desktop/kanshi.nix
+    ./desktop/hypridle.nix
     ./desktop/waybar.nix
+    ./desktop/kanshi.nix
+    ./desktop/hyprpaper.nix
     ./desktop/fnott.nix
     ./desktop/sunset.nix
 
