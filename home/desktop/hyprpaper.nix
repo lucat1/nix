@@ -15,7 +15,7 @@
         "${vars.homeDirectory + "/Pictures/wallpapers/current.jpg"}"
       ];
       wallpaper = [
-        "eDP-1,${vars.homeDirectory + "/Pictures/wallpapers/current.jpg"}"
+        ",${vars.homeDirectory + "/Pictures/wallpapers/current.jpg"}"
       ];
     };
   };
