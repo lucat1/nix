@@ -54,7 +54,7 @@
         smartBorders = "on";
       };
 
-      terminal = "${lib.getExe pkgs.foot}";
+      terminal = "${lib.getExe' pkgs.foot "footclient"}";
       menu = let
         menu = (import ../scripts/menu.nix) {
           pkgs = pkgs;
@@ -79,7 +79,7 @@
 
           "${modifier}+Alt+1" = "exec ${lib.getExe scr}";
           "${modifier}+p" = "exec ${lib.getExe pws}";
-          "${modifier}+Escape" = "${lib.getExe pkgs.foot} -H ${lib.getExe' pkgs.systemd "loginctl"} list-sessions";
+          "${modifier}+Escape" = "exec ${menu}"; # "${lib.getExe pkgs.foot} -H ${lib.getExe' pkgs.systemd "loginctl"} list-sessions";
         };
 
       bars = [];
