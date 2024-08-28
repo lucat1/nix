@@ -87,7 +87,6 @@ in {
     killall
     pciutils
   ];
-  programs.light.enable = true;
   services.locate = {
     enable = true;
     package = pkgs.plocate;

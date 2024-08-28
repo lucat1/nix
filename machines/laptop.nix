@@ -18,7 +18,12 @@
   hardware.amdgpu.initrd.enable = true;
   services.tlp.enable = true;
   boot = {
-    kernelModules = ["kvm-amd" "acpi_call"];
+    kernelModules = [
+      "kvm-amd"
+      "acpi_call"
+      "i2c-dev"
+      "ddcci_backlight"
+    ];
     kernelParams = [
       "mem_sleep_default=deep"
       "pcie_aspm.policy=powersupersave"
@@ -35,7 +40,10 @@
     ];
 
     blacklistedKernelModules = ["nouveau"];
-    extraModulePackages = with config.boot.kernelPackages; [acpi_call];
+    extraModulePackages = with config.boot.kernelPackages; [
+      acpi_call
+      ddcci-driver
+    ];
   };
   hardware.cpu.amd.updateMicrocode = true;
   services.fstrim.enable = lib.mkDefault true;

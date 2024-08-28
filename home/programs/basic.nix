@@ -12,6 +12,7 @@ in {
     pavucontrol
     imv
     fend
+    brightnessctl
 
     # kicad
 

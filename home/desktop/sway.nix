@@ -80,6 +80,17 @@
           "${modifier}+Alt+1" = "exec ${lib.getExe scr}";
           "${modifier}+p" = "exec ${lib.getExe pws}";
           "${modifier}+Escape" = "exec ${lib.getExe' pkgs.systemd "loginctl"} lock-session";
+
+          "XF86AudioMute" = "exec ${lib.getExe' pkgs.wireplumber "wpctl"} set-mute @DEFAULT_AUDIO_SINK@ toggle";
+          "XF86AudioRaiseVolume" = "exec ${lib.getExe' pkgs.wireplumber "wpctl"} set-volume -l 1 @DEFAULT_AUDIO_SINK@ 2%+";
+          "XF86AudioLowerVolume" = "exec ${lib.getExe' pkgs.wireplumber "wpctl"} set-volume -l 1 @DEFAULT_AUDIO_SINK@ 2%-";
+          "XF86AudioMicMute" = "exec ${lib.getExe' pkgs.wireplumber "wpctl"} set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
+          "XF86AudioPlay" = "exec ${lib.getExe pkgs.playerctl} play";
+          "XF86AudioNext" = "exec ${lib.getExe pkgs.playerctl} next";
+          "XF86AudioPrev" = "exec ${lib.getExe pkgs.playerctl} previous";
+          "XF86AudioStop" = "exec ${lib.getExe pkgs.playerctl} stop";
+          "XF86MonBrightnessUp" = "exec ${lib.getExe pkgs.brightnessctl} set 2%+";
+          "XF86MonBrightnessDown" = "exec ${lib.getExe pkgs.brightnessctl} set 2%-";
         };
 
       bars = [];
