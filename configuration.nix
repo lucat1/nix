@@ -14,7 +14,6 @@ in {
   ];
 
   system.stateVersion = "23.11"; # Do not change
-  system.autoUpgrade.enable = true;
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
