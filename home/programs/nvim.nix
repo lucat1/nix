@@ -43,6 +43,7 @@
         },
         rust = { lsp = 'rust_analyzer' },
         ltex = {},
+        zen = {},
         languages = {
           'c',
           'latex',
