@@ -8,10 +8,10 @@
 }: {
   home.file = {
     ".local/share/nvim/site/pack/paks/start/visimp".source = pkgs.fetchFromGitHub {
-      owner = "lucat1";
+      owner = "visimp";
       repo = "visimp";
-      rev = "3e793f7";
-      sha256 = "sha256-UdBizpUKMlRZh9+S9HQF5MOabQUT3+70dsPuAIWVZ58="; # lib.fakeSha256;
+      rev = "27f8ea0";
+      sha256 = "sha256-90br1YHgEIxA6gvpfR5AV5iu37dald5Qx6srRRttV0o="; # lib.fakeSha256;
     };
   };
 
