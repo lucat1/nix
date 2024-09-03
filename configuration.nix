@@ -64,11 +64,11 @@ in {
 
         "quad9-doh-ip4-port443-nofilter-pri"
         "quad9-doh-ip4-port5053-filter-pri"
-        "quad9-doh-ip6-port443-nofilter-pri"
-        "quad9-doh-ip6-port5053-filter-pri"
+        # "quad9-doh-ip6-port443-nofilter-pri"
+        # "quad9-doh-ip6-port5053-filter-pri"
 
         "cloudflare"
-        "cloudflare-ipv6"
+        # "cloudflare-ipv6"
       ];
     };
   };
