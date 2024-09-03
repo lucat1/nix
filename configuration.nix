@@ -20,10 +20,61 @@ in {
   boot.loader.systemd-boot.consoleMode = "max";
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = vars.hostname;
-  networking.networkmanager.enable = true;
-  systemd.services.nssd.enable = false;
-  systemd.services.nssd.wantedBy = lib.mkForce [];
+  # Networking
+  networking = {
+    hostName = vars.hostname;
+    nameservers = ["127.0.0.1" "::1"];
+    firewall.enable = true;
+    networkmanager = {
+      enable = true;
+      dns = "none";
+    };
+  };
+  systemd.services.nssd = {
+    enable = false;
+    wantedBy = lib.mkForce [];
+  };
+  services.dnscrypt-proxy2 = {
+    enable = true;
+    settings = {
+      ipv6_servers = true;
+      require_dnssec = true;
+
+      dnscrypt_servers = false;
+      doh_servers = true;
+      odoh_servers = true;
+      require_nolog = true;
+      require_nofilter = true;
+
+      sources.public-resolvers = {
+        urls = [
+          "https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/public-resolvers.md"
+          "https://download.dnscrypt.info/resolvers-list/v3/public-resolvers.md"
+          "https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/odoh-resolvers.md"
+        ];
+        cache_file = "/var/lib/dnscrypt-proxy2/public-resolvers.md";
+        minisign_key = "RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3";
+      };
+
+      # From https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v3/public-resolvers.md
+      server_names = [
+        "odohrelay-ibksturm" # Switzerland
+        "odohrelay-ams" # Amsterdam
+        "odohrelay-se" # Sweden
+
+        "quad9-doh-ip4-port443-nofilter-pri"
+        "quad9-doh-ip4-port5053-filter-pri"
+        "quad9-doh-ip6-port443-nofilter-pri"
+        "quad9-doh-ip6-port5053-filter-pri"
+
+        "cloudflare"
+        "cloudflare-ipv6"
+      ];
+    };
+  };
+  systemd.services.dnscrypt-proxy2.serviceConfig = {
+    StateDirectory = "dnscrypt-proxy";
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/Rome";
@@ -34,9 +85,11 @@ in {
     pkgs.gutenprint
     pkgs.gutenprintBin
   ];
-  sound.enable = true;
+
+  # Sound
   security.rtkit.enable = true;
   services.dbus.enable = true;
+  sound.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -52,6 +105,7 @@ in {
     };
   };
 
+  # User setup
   programs.zsh.enable = true;
   users.groups."${vars.user}" = {};
   users.users."${vars.user}" = {
@@ -74,9 +128,10 @@ in {
       default_session = initial_session;
     };
   };
-  # To make xdg-desktop-portal installed by home-manager work
+  # To make the xdg-desktop-portal installed by home-manager work
   environment.pathsToLink = ["/share/xdg-desktop-portal" "/share/applications"];
 
+  # misc
   environment.systemPackages = with pkgs; [
     neovim
     ripgrep
@@ -92,8 +147,6 @@ in {
     localuser = null;
     interval = "12:00";
   };
-
-  networking.firewall.enable = true;
   fonts.fontDir.enable = true;
   programs.dconf.enable = true;
   programs.nix-ld = {
