@@ -85,6 +85,7 @@ in {
     pkgs.gutenprint
     pkgs.gutenprintBin
   ];
+  hardware.sane.enable = true;
 
   # Sound
   security.rtkit.enable = true;
@@ -110,7 +111,7 @@ in {
   users.groups."${vars.user}" = {};
   users.users."${vars.user}" = {
     isNormalUser = true;
-    extraGroups = ["wheel" "video" "audio" vars.user];
+    extraGroups = ["wheel" "video" "audio" vars.user "scanner" "lp"];
     shell = pkgs.zsh;
   };
   security.sudo.wheelNeedsPassword = false;
