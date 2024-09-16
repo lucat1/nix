@@ -42,6 +42,7 @@
         "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
         "browser.newtabpage.activity-stream.feeds.topsites" = false;
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+        "media.ffmpeg.vaapi.enabled" = true;
       };
 
       SearchEngines = {
