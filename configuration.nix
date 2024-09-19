@@ -142,7 +142,7 @@ in {
     killall
     pciutils
 
-    podman-compose
+    docker-compose
   ];
   services.locate = {
     enable = true;
