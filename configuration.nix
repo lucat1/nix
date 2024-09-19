@@ -141,6 +141,8 @@ in {
     git
     killall
     pciutils
+
+    podman-compose
   ];
   services.locate = {
     enable = true;
@@ -153,5 +155,15 @@ in {
   programs.nix-ld = {
     enable = true;
     package = pkgs.nix-ld-rs;
+  };
+
+  # ew
+  virtualisation = {
+    containers.enable = true;
+    podman = {
+      enable = true;
+      dockerCompat = true;
+      defaultNetwork.settings.dns_enabled = true;
+    };
   };
 }
