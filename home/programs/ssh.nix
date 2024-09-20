@@ -45,6 +45,8 @@
       "*.ethz.ch !jumphost.inf.ethz.ch" = {
         proxyJump = "eth-jump";
         user = "ltagliavini";
+        forwardX11 = true;
+        forwardX11Trusted = true;
       };
     };
   };
