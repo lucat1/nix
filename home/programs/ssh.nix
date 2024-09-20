@@ -37,6 +37,15 @@
         user = "root";
         localForwards = [proxmoxForward];
       };
+
+      "eth-jump" = {
+        hostname = "jumphost.inf.ethz.ch";
+        user = "ltagliavini";
+      };
+      "*.ethz.ch !jumphost.inf.ethz.ch" = {
+        proxyJump = "jumphost.inf.ethz.ch";
+        user = "ltagliavini";
+      };
     };
   };
 
