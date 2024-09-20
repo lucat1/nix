@@ -18,7 +18,7 @@
         profile.outputs = [
           {
             criteria = builtin_display;
-            scale = 1.0; # 2.0;
+            scale = 2.0;
           }
         ];
       }
