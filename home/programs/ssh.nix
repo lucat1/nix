@@ -43,7 +43,7 @@
         user = "ltagliavini";
       };
       "*.ethz.ch !jumphost.inf.ethz.ch" = {
-        proxyJump = "jumphost.inf.ethz.ch";
+        proxyJump = "eth-jump";
         user = "ltagliavini";
       };
     };
