@@ -42,6 +42,7 @@
           },
         },
         rust = { lsp = 'rust_analyzer' },
+        ocaml = { lsp = 'ocamllsp' },
         ltex = {},
         zen = {},
         languages = {
