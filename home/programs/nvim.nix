@@ -52,6 +52,7 @@
           'html',
           'vue',
           'css',
+          'ocaml',
           'json',
           'go',
           'rust',
