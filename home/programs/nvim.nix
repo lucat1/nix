@@ -45,6 +45,7 @@
         ocaml = { lsp = 'ocamllsp' },
         ltex = {},
         zen = {},
+        c = { lsp = 'clangd' },
         languages = {
           'c',
           'latex',
