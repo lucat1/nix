@@ -10,10 +10,14 @@
     ".local/share/nvim/site/pack/paks/start/visimp".source = pkgs.fetchFromGitHub {
       owner = "visimp";
       repo = "visimp";
-      rev = "v0.6.0";
-      sha256 = "sha256-90br1YHgEIxA6gvpfR5AV5iu37dald5Qx6srRRttV0o="; # lib.fakeSha256;
+      rev = "cc9ffdfc6bd41eb1a8ce3c8e08c63b9b541e50c5"; # "v0.6.0";
+      sha256 = "sha256-meZUTd1d5oVxKBw1hlesmDqRawayn3VTWvxtpxmjoLQ="; # lib.fakeSha256;
     };
   };
+
+  home.packages = with pkgs; [
+    inputs.nixpkgs-unstable.legacyPackages.x86_64-linux.jetbrains.idea-community
+  ];
 
   programs.neovim = {
     enable = true;
@@ -53,6 +57,7 @@
           'javascript',
           'html',
           'vue',
+          'kotlin',
           'css',
           'ocaml',
           'json',
