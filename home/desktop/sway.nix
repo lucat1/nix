@@ -101,6 +101,15 @@
       }) ["kanshi" "waybar"];
     };
 
+    extraConfig = ''
+      for_window {
+        [window_role="pop-up"] floating enable
+        [window_role="bubble"] floating enable
+        [window_role="dialog"] floating enable
+        [window_type="dialog"] floating enable
+      }
+    '';
+
     systemd = {
       enable = true;
     };
