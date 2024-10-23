@@ -23,11 +23,15 @@ in {
   # Networking
   networking = {
     hostName = vars.hostname;
-    nameservers = ["127.0.0.1" "::1"];
     firewall.enable = true;
     networkmanager = {
       enable = true;
-      dns = "none";
+      insertNameservers = ["127.0.0.1" "::1"];
+      settings = {
+        connectivity = {
+          interval = 0;
+        };
+      };
     };
   };
   systemd.services.nssd = {
