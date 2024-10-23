@@ -26,7 +26,7 @@ in {
     firewall.enable = true;
     networkmanager = {
       enable = true;
-      # insertNameservers = ["127.0.0.1" "::1"];
+      insertNameservers = ["1.1.1.1" "127.0.0.1" "::1"];
       settings = {
         connectivity = {
           interval = 0;
