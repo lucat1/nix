@@ -115,7 +115,7 @@ in {
   users.groups."${vars.user}" = {};
   users.users."${vars.user}" = {
     isNormalUser = true;
-    extraGroups = ["wheel" "video" "audio" vars.user "scanner" "lp"];
+    extraGroups = ["wheel" "video" "audio" vars.user "scanner" "lp" "networkmanager"];
     shell = pkgs.zsh;
   };
   security.sudo.wheelNeedsPassword = false;
@@ -147,6 +147,7 @@ in {
     pciutils
 
     # ensure we have priorietary VPN support
+    openconnect
     networkmanager-openconnect
 
     docker-compose
