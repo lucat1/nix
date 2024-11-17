@@ -146,6 +146,9 @@ in {
     killall
     pciutils
 
+    # ensure we have priorietary VPN support
+    networkmanager-openconnect
+
     docker-compose
   ];
   services.locate = {
