@@ -38,17 +38,17 @@
         localForwards = [proxmoxForward];
       };
 
-      "*.ethz.ch" = {
-        user = "ltagliavini";
-      };
       "eth-jump" = {
+        user = "ltagliavini";
         hostname = "jumphost.inf.ethz.ch";
       };
       "alveo-*.ethz.ch" = {
+        user = "ltagliavini";
         forwardX11 = true;
         forwardX11Trusted = true;
       };
       "*.ethz.ch !jumphost.inf.ethz.ch !alveo-*.ethz.ch" = {
+        user = "ltagliavini";
         proxyJump = "eth-jump";
       };
     };
