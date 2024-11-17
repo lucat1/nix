@@ -36,10 +36,10 @@ in {
   };
   services.resolved = {
     enable = true;
-    dnssec = "allow-downgrade";
+    dnssec = "false"; # "allow-downgrade";
     domains = ["~."];
     fallbackDns = ["1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one"];
-    dnsovertls = "opportunistic";
+    dnsovertls = "false"; # "opportunistic";
   };
   systemd.services.nssd = {
     enable = false;
