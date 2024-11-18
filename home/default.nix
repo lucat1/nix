@@ -70,7 +70,7 @@
     imagemagick
     ghostscript # required by previous
 
-    inputs.nixpkgs-unstable.legacyPackages.x86_64-linux.zotero
+    inputs.nixpkgs-unstable.legacyPackages.x86_64-linux.zotero-beta
   ];
 
   programs.thunderbird = {
