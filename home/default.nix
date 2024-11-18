@@ -3,6 +3,7 @@
   options,
   pkgs,
   vars,
+  inputs,
   ...
 }: {
   home.stateVersion = "23.11"; # Do not change
@@ -69,7 +70,7 @@
     imagemagick
     ghostscript # required by previous
 
-    zotero
+    inputs.nixpkgs-unstable.legacyPackages.x86_64-linux.zotero
   ];
 
   programs.thunderbird = {
