@@ -68,6 +68,8 @@
 
     imagemagick
     ghostscript # required by previous
+
+    zotero
   ];
 
   programs.thunderbird = {
