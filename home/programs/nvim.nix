@@ -28,6 +28,7 @@
     defaultEditor = true;
 
     extraPackages = with pkgs; [
+      git
       gcc
       go
       tree-sitter
