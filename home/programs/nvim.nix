@@ -10,8 +10,8 @@
     ".local/share/nvim/site/pack/paks/start/visimp".source = pkgs.fetchFromGitHub {
       owner = "visimp";
       repo = "visimp";
-      rev = "36995d2a7969b03c5688a10940201e1b3f3fcfcf"; # "v0.6.0";
-      sha256 = "sha256-54/iagkJ1Bs8NuEMmvmnSjL7IfVQzlSAhCnZmYciukg="; # lib.fakeSha256;
+      rev = "dd8d5d5a1ab74206f00c6d4fcef337ba9ee5b9ca"; # "v0.6.0";
+      sha256 = "sha256-PlXasy9/HjUZcALtIYBYfM5y/g0XQfH8Vy4W2A5aJfU="; # lib.fakeSha256;
     };
   };
 
