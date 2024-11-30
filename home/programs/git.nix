@@ -7,6 +7,9 @@
 }: {
   programs.git = {
     enable = true;
+
+    lfs.enable = true;
+
     userName = vars.firstName;
     userEmail = vars.email;
 
