@@ -27,7 +27,7 @@
       };
       "picione" = {
         hostname = "honey.teapot.ovh";
-        port = 2221;
+        port = 2220;
         user = "root";
         localForwards = [proxmoxForward];
       };
