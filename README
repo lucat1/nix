@@ -10,5 +10,6 @@ To update the whole system:
 
 $ sudo nixos-rebuild switch --upgrade \
   --update-input nixpkgs \
+  --update-input nixpkgs-unstable \
   --update-input home-manager \
   --update-input nix-index-database

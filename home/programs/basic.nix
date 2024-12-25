@@ -14,7 +14,7 @@ in {
     fend
     brightnessctl
 
-    # kicad
+    comma
 
     (rebuild {pkgs = pkgs;})
   ];
@@ -23,5 +23,4 @@ in {
     enable = true;
     enableZshIntegration = true;
   };
-  programs.nix-index-database.comma.enable = true;
 }
