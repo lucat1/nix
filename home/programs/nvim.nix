@@ -15,10 +15,6 @@
     };
   };
 
-  # home.packages = with pkgs; [
-  #   inputs.nixpkgs-unstable.legacyPackages.x86_64-linux.jetbrains.idea-community
-  # ];
-
   programs.neovim = {
     enable = true;
     package = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux.neovim-unwrapped;
