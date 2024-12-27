@@ -108,6 +108,7 @@
         [window_role="dialog"] floating enable
         [window_type="dialog"] floating enable
         [app_id="firefox" title=".+\(Bitwarden Password Manager\).+"] floating enable
+        [app_id="thunderbird" title="Write: .+"] floating enable
       }
     '';
 
