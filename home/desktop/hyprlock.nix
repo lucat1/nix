@@ -25,9 +25,6 @@
 
       input-field = [
         {
-          size = "300, 75";
-          position = "0, -545";
-          monitor = "";
           font_color = "rgb(235, 219, 178)";
           inner_color = "rgb(29, 32, 33)";
           outer_color = "rgb(40, 40, 40)";
@@ -37,6 +34,11 @@
           hide_input = true;
           fade_on_empty = true;
           fade_timeout = 0;
+
+          size = "350%, 75%";
+          halign = "center";
+          valign = "center";
+          position = "0, -420%";
         }
       ];
 
@@ -48,9 +50,9 @@
           font_size = 100;
           font_family = vars.fontFamilies.monospace;
 
-          position = "0, 675";
           halign = "center";
           valign = "center";
+          position = "0, 420%";
         }
         {
           text = "cmd[update:3600000] date +\"%a, %d %B\"";
@@ -59,9 +61,9 @@
           font_size = 24;
           font_family = vars.fontFamilies.monospace;
 
-          position = "0, 545";
           halign = "center";
           valign = "center";
+          position = "0, 300%";
         }
         {
           text = "Type to unlock";
@@ -70,9 +72,9 @@
           font_size = 20;
           font_family = vars.fontFamilies.monospace;
 
-          position = "0, -545";
           halign = "center";
           valign = "center";
+          position = "0, -420%";
         }
       ];
     };
