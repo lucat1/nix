@@ -2,6 +2,7 @@
   config,
   options,
   pkgs,
+  lib,
   vars,
   ...
 }: {
@@ -55,7 +56,7 @@
           position = "0, 420%";
         }
         {
-          text = "cmd[update:3600000] date +\"%a, %d %B\"";
+          text = "cmd[update:3600000] ${lib.getExe' pkgs.coreutils "date"} +\"%a, %d %B\"";
           text_align = "center";
           color = "rgb(235, 219, 178)";
           font_size = 24;
