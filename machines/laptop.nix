@@ -4,15 +4,9 @@
   pkgs,
   ...
 }: {
-  # When we move to nix 24.11
-  # hardware.graphics = {
-  #   enable = true;
-  #   enable32Bit = true;
-  # };
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
   };
   services.xserver.videoDrivers = ["modesetting"];
   hardware.amdgpu.initrd.enable = true;

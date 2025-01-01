@@ -16,7 +16,7 @@
     roboto
     noto-fonts
     noto-fonts-extra
-    noto-fonts-cjk
+    noto-fonts-cjk-sans
     (nerdfonts.override {fonts = ["IBMPlexMono"];})
   ];
 

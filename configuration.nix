@@ -101,7 +101,6 @@ in {
   # Sound
   security.rtkit.enable = true;
   services.dbus.enable = true;
-  sound.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
