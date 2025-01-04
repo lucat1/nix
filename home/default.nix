@@ -31,6 +31,7 @@
     ./desktop/hyprpaper.nix
     ./desktop/fnott.nix
     ./desktop/sunset.nix
+    ./desktop/cliphist.nix
 
     ./programs/zsh.nix
     ./programs/direnv.nix
