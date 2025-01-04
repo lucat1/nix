@@ -71,7 +71,7 @@
         };
         clip = let
           cliphist = lib.getExe' pkgs.cliphist "cliphist";
-        in "${cliphist} list | ${lib.getExe cmenu} | ${cliphist} decode |  ${lib.getExe' pkgs.wl-clipboard "wl-copy"}";
+        in "${cliphist} list | ${lib.getExe cmenu} ${lib.getExe' pkgs.bemenu "bemenu"} | ${cliphist} decode |  ${lib.getExe' pkgs.wl-clipboard "wl-copy"}";
       in
         lib.mkOptionDefault {
           "${modifier}+w" = "kill";
