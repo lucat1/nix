@@ -20,7 +20,12 @@
     enable = true;
     xwayland = true;
 
-    config = rec {
+    config = let
+      cmenu = (import ../scripts/menu.nix) {
+        pkgs = pkgs;
+        vars = vars;
+      };
+    in rec {
       modifier = "Mod4";
 
       input = {
@@ -55,12 +60,7 @@
       };
 
       terminal = "${lib.getExe' pkgs.foot "footclient"}";
-      menu = let
-        menu = (import ../scripts/menu.nix) {
-          pkgs = pkgs;
-          vars = vars;
-        };
-      in "${lib.getExe menu} ${lib.getExe' pkgs.bemenu "bemenu-run"} --no-exec -p run | ${lib.getExe' pkgs.findutils "xargs"} ${lib.getExe' pkgs.sway "swaymsg"} exec --";
+      menu = "${lib.getExe cmenu} ${lib.getExe' pkgs.bemenu "bemenu-run"} --no-exec -p run | ${lib.getExe' pkgs.findutils "xargs"} ${lib.getExe' pkgs.sway "swaymsg"} exec --";
 
       keybindings = let
         scr = (import ../scripts/scr.nix) {pkgs = pkgs;};
@@ -69,10 +69,14 @@
           pkgs = pkgs;
           vars = vars;
         };
+        clip = let
+          cliphist = lib.getExe' pkgs.cliphist "cliphist";
+        in "${cliphist} list | ${lib.getExe cmenu} | ${cliphist} decode |  ${lib.getExe' pkgs.wl-clipboard "wl-copy"}";
       in
         lib.mkOptionDefault {
           "${modifier}+w" = "kill";
           "${modifier}+space" = "exec ${menu}";
+          "${modifier}+c" = "exec ${clip}";
           "${modifier}+d" = null;
           "${modifier}+f" = "floating toggle";
           "${modifier}+Shift+f" = "fullscreen";
