@@ -45,6 +45,7 @@ in {
     enable = false;
     wantedBy = lib.mkForce [];
   };
+  services.clatd.enable = true;
   # services.dnscrypt-proxy2 = {
   #   enable = true;
   #   settings = {
@@ -83,9 +84,9 @@ in {
   #     ];
   #   };
   # };
-  systemd.services.dnscrypt-proxy2.serviceConfig = {
-    StateDirectory = "dnscrypt-proxy";
-  };
+  # systemd.services.dnscrypt-proxy2.serviceConfig = {
+  #   StateDirectory = "dnscrypt-proxy";
+  # };
 
   # Set your time zone.
   time.timeZone = "Europe/Rome";
