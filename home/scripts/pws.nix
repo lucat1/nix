@@ -51,9 +51,9 @@ in
       field=$(echo -e "$fields" | menu bemenu --auto-select -p action | tr '[:upper:]' '[:lower:]')
 
       if [ "$field" == "otp" ]; then
-        rbw_action "code" | wl-copy -o
+        rbw_action "code" | wl-copy
       else
-        echo "$json" | jq --join-output ".data.$field" | wl-copy -o # This way the data can be pasted only once
+        echo "$json" | jq --join-output ".data.$field" | wl-copy
       fi
     '';
   }
