@@ -46,6 +46,7 @@
 
     ./programs/basic.nix
     ./programs/bat.nix
+    ./programs/syncthing.nix
   ];
 
   home.packages = with pkgs; [
