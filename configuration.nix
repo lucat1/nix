@@ -22,7 +22,7 @@ in {
 
   networking = {
     hostName = vars.hostname;
-    firewall.enable = true;
+    # firewall.enable = true;
     nameservers = ["1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one"];
     networkmanager = {
       enable = true;
