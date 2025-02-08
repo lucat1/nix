@@ -1,4 +1,5 @@
 {
+  lib,
   config,
   options,
   pkgs,
@@ -6,6 +7,7 @@
   ...
 }: let
   pinentry = (import ../scripts/pinentry.nix) {
+    lib = lib;
     pkgs = pkgs;
     vars = vars;
   };
