@@ -23,7 +23,7 @@ in
         case $stdin in
           *BYE*) echo "OK closing connection"; break ;;
           *SETDESC*) KEYNAME=''${stdin#*:%0A%22}; KEYNAME=''${KEYNAME%\%22\%0A*}; KEYID=''${stdin#*ID }; KEYID=''${KEYID%,*}; echo OK ;;
-          *GETPIN*) PASS=$(echo "" | ${lib.getExe menu} ${lib.getExe pkgs.bemenu} -x hide -p "gpg($KEYNAME):");echo "D $PASS"; echo "OK" ;;
+          *GETPIN*) PASS=$(echo "" | ${lib.getExe menu} ${lib.getExe pkgs.bemenu} -x hide -p "$KEYNAME:");echo "D $PASS"; echo "OK" ;;
           *) echo OK
         esac
       done
