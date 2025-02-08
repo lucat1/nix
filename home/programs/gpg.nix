@@ -4,7 +4,12 @@
   pkgs,
   vars,
   ...
-}: {
+}: let
+  pinentry = (import ../scripts/pinentry.nix) {
+    pkgs = pkgs;
+    vars = vars;
+  };
+in {
   programs.gpg = {
     enable = true;
     settings = {
@@ -15,7 +20,7 @@
 
   services.gpg-agent = {
     enable = true;
-    pinentryPackage = pkgs.pinentry-bemenu;
+    pinentryPackage = pinentry;
     defaultCacheTtl = 24 * 60 * 60; # one day
   };
 }

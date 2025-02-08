@@ -4,15 +4,15 @@
   pkgs,
   vars,
   ...
-}: {
+}: let
+  pinentry = (import ../scripts/pinentry.nix) {
+    pkgs = pkgs;
+    vars = vars;
+  };
+in {
   programs.password-store = {
     enable = true;
     package = pkgs.gopass.override {passAlias = true;};
-  };
-
-  programs.browserpass = {
-    enable = true;
-    browsers = ["firefox"];
   };
 
   xdg.configFile."gopass/config".text = ''
@@ -38,7 +38,7 @@
       email = vars.email;
       base_url = "https://vault.teapot.ovh";
       lock_timeout = 60 * 60; # 1 hour
-      pinentry = pkgs.pinentry-bemenu;
+      pinentry = pinentry;
     };
   };
 }

@@ -80,10 +80,6 @@
     profiles = {};
   };
   programs.zathura.enable = true;
-  programs.browserpass = {
-    enable = true;
-    browsers = ["firefox"];
-  };
 
   fonts.fontconfig.enable = true;
 
