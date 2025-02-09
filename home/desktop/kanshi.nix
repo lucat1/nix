@@ -44,7 +44,7 @@
         profile.outputs = [
           {
             criteria = builtin_display;
-            position = "420,1080";
+            status = "disable";
           }
           {
             criteria = "Samsung Electric Company SAMSUNG Unknown";
