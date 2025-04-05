@@ -37,11 +37,10 @@
         user = "root";
         localForwards = [proxmoxForward];
       };
-      "geno" = {
+      "mocha" = {
         hostname = "cappuccino.ovh";
         port = 2222;
         user = "root";
-        localForwards = [proxmoxForward];
       };
 
       "eth-jump" = {
