@@ -5,7 +5,8 @@
   ...
 }: {
   services.syncthing = {
-    enable = true;
-    tray = true;
+    # TODO: temporarily disabled
+    enable = false;
+    tray = false;
   };
 }

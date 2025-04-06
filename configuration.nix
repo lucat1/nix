@@ -155,6 +155,7 @@ in {
   environment.systemPackages = with pkgs; [
     neovim
     ripgrep
+    jless
     htop
     curl
     git
