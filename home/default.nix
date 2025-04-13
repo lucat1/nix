@@ -73,7 +73,9 @@
     ghostscript # required by previous
 
     # inputs.nixpkgs-unstable.legacyPackages.x86_64-linux.zotero-beta
+
     kubectl
+    k9s
   ];
 
   programs.thunderbird = {
