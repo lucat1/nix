@@ -96,6 +96,9 @@ in {
   #   StateDirectory = "dnscrypt-proxy";
   # };
 
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+
   # Set your time zone.
   time.timeZone = "Europe/Rome";
 
