@@ -125,10 +125,25 @@ in {
     pulse.enable = true;
     jack.enable = true;
     wireplumber.enable = true;
-    extraConfig.pipewire.adjust-sample-rate = {
-      "context.properties" = {
-        "default.clock.rate" = 44100; # frequency required by the Focursite Scarlett Solo
-        "defautlt.allowed-rates" = [192000 176400 96000 88200 48000 44100];
+    raopOpenFirewall = true;
+    extraConfig.pipewire = {
+      "99-focusrite-adjust-sample-rate" = {
+        "context.properties" = {
+          "default.clock.rate" = 44100; # frequency required by the Focursite Scarlett Solo
+          "defautlt.allowed-rates" = [192000 176400 96000 88200 48000 44100];
+        };
+      };
+      "10-airplay" = {
+        "context.modules" = [
+          {
+            name = "libpipewire-module-raop-discover";
+
+            # increase the buffer size if you get dropouts/glitches
+            # args = {
+            #   "raop.latency.ms" = 500;
+            # };
+          }
+        ];
       };
     };
   };
