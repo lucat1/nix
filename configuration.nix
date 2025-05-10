@@ -98,6 +98,11 @@ in {
 
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/Rome";
