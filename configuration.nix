@@ -143,8 +143,20 @@ in {
 
             args = {
               "roap.discover-local" = true;
-              # increase the buffer size if you get dropouts/glitches
-              # "raop.latency.ms" = 500;
+              "stream.rules" = [
+                {
+                  matches = [
+                    {"raop.ip" = "~.*";}
+                  ];
+                  actions = {
+                    create-stream = {
+                      stream.props = {
+                        media.class = "Audio/Sink";
+                      };
+                    };
+                  };
+                }
+              ];
             };
           }
         ];
