@@ -48,6 +48,9 @@ in {
     domains = ["~."];
     fallbackDns = ["1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one"];
     dnsovertls = "opportunistic"; # "false";
+    extraConfig = "
+    MulticastDNS=false
+    ";
   };
   systemd.services.nssd = {
     enable = false;
