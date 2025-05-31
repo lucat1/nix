@@ -22,7 +22,9 @@ in {
 
   services.gpg-agent = {
     enable = true;
-    pinentryPackage = pinentry;
+    pinentry = {
+      package = pinentry;
+    };
     defaultCacheTtl = 24 * 60 * 60; # one day
   };
 }

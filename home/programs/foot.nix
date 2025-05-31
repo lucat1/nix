@@ -16,7 +16,6 @@
       };
       url = {
         launch = "${pkgs.xdg-utils}/bin/xdg-open \${url}";
-        protocols = "http,https,mailto";
       };
       mouse = {
         hide-when-typing = true;

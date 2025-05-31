@@ -142,21 +142,7 @@ in {
             name = "libpipewire-module-raop-discover";
 
             args = {
-              "roap.discover-local" = true;
-              "stream.rules" = [
-                {
-                  matches = [
-                    {"raop.ip" = "~.*";}
-                  ];
-                  actions = {
-                    create-stream = {
-                      stream.props = {
-                        media.class = "Audio/Sink";
-                      };
-                    };
-                  };
-                }
-              ];
+              "raop.latency.ms" = 1000;
             };
           }
         ];
@@ -210,7 +196,6 @@ in {
   services.locate = {
     enable = true;
     package = pkgs.plocate;
-    localuser = null;
     interval = "12:00";
   };
   fonts.fontDir.enable = true;

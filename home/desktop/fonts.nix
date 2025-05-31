@@ -17,7 +17,7 @@
     noto-fonts
     noto-fonts-extra
     noto-fonts-cjk-sans
-    (nerdfonts.override {fonts = ["IBMPlexMono"];})
+    nerd-fonts.blex-mono
   ];
 
   fonts = {
