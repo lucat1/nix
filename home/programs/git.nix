@@ -6,7 +6,10 @@
   vars,
   ...
 }: {
-  programs.git = {
+  programs.git = let
+    nvim = lib.getExe pkgs.neovim;
+    nvimdiff = lib.getExe' pkgs.neovim "nvimdiff";
+  in {
     enable = true;
 
     lfs.enable = true;
@@ -32,13 +35,12 @@
       # always use nvim as the editor
       core = {editor = "nvim";};
       diff = {
-        editor = "nvimdiff";
-        external = "";
+        editor = "${nvimdiff}";
       };
       merge = {
-        editor = "${lib.getExe' pkgs.neovim "nvimdiff"}";
+        tool = "nvimdiff";
+        editor = "${nvimdiff}";
       };
-      mergetool."nvimdiff" = {path = "nvim";};
     };
   };
 }
