@@ -68,6 +68,8 @@
     gawk
     zstd
     gnupg
+    difftastic
+    mergiraf
 
     imagemagick
     ghostscript # required by previous

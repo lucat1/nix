@@ -9,6 +9,7 @@
   programs.git = let
     nvim = lib.getExe pkgs.neovim;
     nvimdiff = lib.getExe' pkgs.neovim "nvimdiff";
+    difft = lib.getExe pkgs.difftastic;
   in {
     enable = true;
 
@@ -35,6 +36,7 @@
       # always use nvim as the editor
       core = {editor = "nvim";};
       diff = {
+        external = "${difft}";
         editor = "${nvimdiff}";
       };
       merge = {
