@@ -10,6 +10,7 @@
     nvim = lib.getExe pkgs.neovim;
     nvimdiff = lib.getExe' pkgs.neovim "nvimdiff";
     difft = lib.getExe pkgs.difftastic;
+    mergiraf = lib.getExe pkgs.mergiraf;
   in {
     enable = true;
 
@@ -42,7 +43,16 @@
       merge = {
         tool = "nvimdiff";
         editor = "${nvimdiff}";
+        conflictStyle = "diff3";
+      };
+      merge."mergiraf" = {
+        name = "mergiraf";
+        driver = "${mergiraf} merge --git %O %A %B -s %S -x %X -y %Y -p %P -l %L";
       };
     };
+
+    attributes = [
+      "* merge=mergiraf"
+    ];
   };
 }
