@@ -2,6 +2,7 @@
   config,
   options,
   pkgs,
+  lib,
   vars,
   ...
 }: {
@@ -30,8 +31,13 @@
 
       # always use nvim as the editor
       core = {editor = "nvim";};
-      diff = {editor = "nvimdiff";};
-      merge = {editor = "nvimdiff";};
+      diff = {
+        editor = "nvimdiff";
+        external = "";
+      };
+      merge = {
+        editor = "${lib.getExe' pkgs.neovim "nvimdiff"}";
+      };
       mergetool."nvimdiff" = {path = "nvim";};
     };
   };
