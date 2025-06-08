@@ -17,6 +17,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    ucodenix.url = "github:e-tho/ucodenix";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
@@ -33,6 +34,7 @@
     nixpkgs,
     home-manager,
     nix-index-database,
+    ucodenix,
     ...
   }: let
     vars = import ./vars.nix;
@@ -45,6 +47,7 @@
         ./machines/laptop.nix
         ./configuration.nix
 
+        ucodenix.nixosModules.default
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
