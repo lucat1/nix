@@ -3,17 +3,17 @@
     "cpu-microcodes": {
       "flake": false,
       "locked": {
-        "lastModified": 1747081695,
-        "narHash": "sha256-nnim3432n3+iwD2alY1cigQE7GKnI8BkyZDJTzood+E=",
+        "lastModified": 1735409317,
+        "narHash": "sha256-08yRkyEKk94ax8KfqRFsffXH8J6DCOCE7vKLvHORWZM=",
         "owner": "platomav",
         "repo": "CPUMicrocodes",
-        "rev": "2bcc2d8cb648c3397ea7381ca6887a9e3fdd6164",
+        "rev": "ec5200961ecdf78cf00e55d73902683e835edefd",
         "type": "github"
       },
       "original": {
         "owner": "platomav",
         "repo": "CPUMicrocodes",
-        "rev": "2bcc2d8cb648c3397ea7381ca6887a9e3fdd6164",
+        "rev": "ec5200961ecdf78cf00e55d73902683e835edefd",
         "type": "github"
       }
     },
@@ -92,6 +92,7 @@
     },
     "root": {
       "inputs": {
+        "cpu-microcodes": "cpu-microcodes",
         "home-manager": "home-manager",
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs",
@@ -101,7 +102,9 @@
     },
     "ucodenix": {
       "inputs": {
-        "cpu-microcodes": "cpu-microcodes"
+        "cpu-microcodes": [
+          "cpu-microcodes"
+        ]
       },
       "locked": {
         "lastModified": 1747656938,

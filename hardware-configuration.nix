@@ -14,7 +14,6 @@
 
   boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "usb_storage" "sd_mod" "rtsx_pci_sdmmc"];
   boot.initrd.kernelModules = [];
-  boot.kernelParams = ["microcode.amd_sha_check=off"];
   boot.kernelModules = ["kvm-amd" "rtw89"];
   boot.extraModulePackages = [];
 
@@ -54,4 +53,5 @@
     enable = true;
     cpuModelId = "00A40F41";
   };
+  # boot.kernelParams = ["microcode.amd_sha_check=off"];
 }
