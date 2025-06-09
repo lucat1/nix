@@ -39,6 +39,12 @@
       ddcci-driver
     ];
   };
-  hardware.cpu.amd.updateMicrocode = true;
   services.fstrim.enable = lib.mkDefault true;
+  hardware.enableRedistributableFirmware = true;
+  hardware.cpu.amd.updateMicrocode = true;
+  services.ucodenix = {
+    enable = true;
+    cpuModelId = "00A40F41";
+  };
+  # boot.kernelParams = ["microcode.amd_sha_check=off"];
 }

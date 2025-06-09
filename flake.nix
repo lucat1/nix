@@ -18,7 +18,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    # cpu-microcodes is pinned to an older version as my motherboard's firmward
+    # cpu-microcodes is pinned to an older version as my motherboard's firmware
     # was released before 2025.
     cpu-microcodes = {
       url = "github:platomav/CPUMicrocodes/ec5200961ecdf78cf00e55d73902683e835edefd";

@@ -48,10 +48,4 @@
   ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-  services.ucodenix = {
-    enable = true;
-    cpuModelId = "00A40F41";
-  };
-  # boot.kernelParams = ["microcode.amd_sha_check=off"];
 }
