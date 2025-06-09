@@ -17,7 +17,17 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
-    ucodenix.url = "github:e-tho/ucodenix";
+
+    # cpu-microcodes is pinned to an older version as my motherboard's firmward
+    # was released before 2025.
+    cpu-microcodes = {
+      url = "github:platomav/CPUMicrocodes/ec5200961ecdf78cf00e55d73902683e835edefd";
+      flake = false;
+    };
+    ucodenix = {
+      url = "github:e-tho/ucodenix";
+      inputs.cpu-microcodes.follows = "cpu-microcodes";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
