@@ -85,10 +85,4 @@
     profiles = {};
   };
   programs.zathura.enable = true;
-
-  fonts.fontconfig.enable = true;
-
-  # services.hypridle = {
-  #   enable = true;
-  # };
 }
