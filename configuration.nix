@@ -44,10 +44,10 @@ in {
   };
   services.resolved = {
     enable = true;
-    dnssec = "allow-downgrade"; # "false";
+    dnssec = "false"; # "allow-downgrade";
     domains = ["~."];
     fallbackDns = ["1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one"];
-    dnsovertls = "opportunistic"; # "false";
+    dnsovertls = "false"; # "opportunistic";
     extraConfig = "
     MulticastDNS=false
     ";
