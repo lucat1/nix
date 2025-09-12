@@ -43,6 +43,7 @@
           },
         },
         rust = { lsp = 'rust_analyzer' },
+        go = { lsp = 'gopls' },
         ocaml = { lsp = 'ocamllsp' },
         ltex = {},
         zen = {},

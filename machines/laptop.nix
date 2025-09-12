@@ -21,6 +21,7 @@
     kernelParams = [
       "mem_sleep_default=deep"
       "pcie_aspm.policy=powersupersave"
+      "microcode.amd_sha_check=off"
 
       ## Supposed to help fix for suspend issues: SSD not correctly working, and Keyboard not responding:
       ## Not needed for the 6.1+ kernels?
@@ -46,5 +47,4 @@
     enable = true;
     cpuModelId = "00A40F41";
   };
-  # boot.kernelParams = ["microcode.amd_sha_check=off"];
 }

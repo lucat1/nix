@@ -69,7 +69,7 @@
             ];
           };
           home-manager.sharedModules = [
-            nix-index-database.hmModules.nix-index
+            nix-index-database.homeModules.nix-index
           ];
           home-manager.extraSpecialArgs = {
             vars = vars;
