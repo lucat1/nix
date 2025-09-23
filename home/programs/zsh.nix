@@ -60,4 +60,14 @@
       }
     ];
   };
+
+  programs.atuin = {
+    enable = true;
+    settings = {
+      search_mode = "fuzzy";
+      style = "compact";
+      inline_height = 20;
+    };
+    flags = ["--disable-up-arrow"];
+  };
 }
