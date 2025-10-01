@@ -32,7 +32,7 @@
           }
           {
             criteria = "HP Inc. HP Z27k G3 CN41271V20";
-            position = "1440,0";
+            position = "1440,540";
             scale = 1.5;
           }
         ];
