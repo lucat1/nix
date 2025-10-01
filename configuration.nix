@@ -221,7 +221,7 @@ in {
     enable = true;
     keyboards = {
       apple = {
-        ids = ["*05ac:*"]; # Apple vendor ID
+        ids = ["05ac:021e"]; # Apple, Inc. Aluminum Mini Keyboard (ISO)
         settings = {
           main = {
             # Remap Fn key to Left Control
