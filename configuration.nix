@@ -217,11 +217,7 @@ in {
 
   # services.tailscale.enable = true;
   services.udev.extraHwdb = ''
-    evdev:input:b0003v05ACp021E*
-     KEYBOARD_KEY_ff0003=rightctrl
-
-    # Also try this more generic pattern
-    evdev:input:*
+    evdev:input:b0003v05ACp021Ee0111-*
      KEYBOARD_KEY_ff0003=rightctrl
   '';
 }
