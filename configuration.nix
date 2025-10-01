@@ -218,6 +218,6 @@ in {
   # services.tailscale.enable = true;
   services.udev.extraHwdb = ''
     evdev:input:b0003v05ACp*
-     KEYBOARD_KEY_feffe3=rightctrl
+     KEYBOARD_KEY_ff0003=rightctrl
   '';
 }
