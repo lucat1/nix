@@ -8,13 +8,15 @@
 }: let
   xkbKeymap = pkgs.writeText "apple-keymap" ''
     xkb_keymap {
-      xkb_keycodes  { include "evdev+aliases(qwerty)" };
+      // xkb_keycodes  { include "evdev+aliases(qwerty)" };
+      xkb_keycodes {
+        include "evdev+aliases(qwerty)"
+        <FK01> = 464;  // Map Fn key to a custom keycode name
+      };
       xkb_types     { include "complete" };
       xkb_compat    { include "complete" };
       xkb_symbols   {
         include "pc+us+us(intl):2+inet(evdev)+altwin(swap_alt_win)+capslock(escape)+group(shifts_toggle)"
-
-        replace key <I464> { [ Control_R ] };
 
         // Swap grave/tilde with less/greater
         replace key <TLDE> { [ less, greater, less, greater ] };
@@ -24,6 +26,8 @@
             symbols[Group1] = [ grave, asciitilde, grave, asciitilde ],
             symbols[Group2] = [ dead_grave, dead_tilde, dead_grave, dead_tilde ]
         };
+
+        replace key <FK01> { [ Control_R, Control_R ] };
       };
       xkb_geometry  { include "pc(pc105)" };
     };
