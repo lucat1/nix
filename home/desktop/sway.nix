@@ -8,11 +8,19 @@
 }: let
   xkbKeymap = pkgs.writeText "apple-keymap" ''
     xkb_keymap {
-      xkb_keycodes  { include "evdev+aliases(qwerty)" };
+      xkb_keycodes  {
+        include "evdev+aliases(qwerty)"
+        // Map KEY_FN (464) to a keycode, then alias it to RCTL
+        <I464> = 464;
+        alias <FK01> = <I464>;
+      };
       xkb_types     { include "complete" };
       xkb_compat    { include "complete" };
       xkb_symbols   {
         include "pc+us+us(intl):2+inet(evdev)+altwin(swap_alt_win)+capslock(escape)+group(shifts_toggle)"
+
+        // Make FK01 act as Right Control
+        key <FK01> { [ Control_R, Control_R ] };
 
         // Swap grave/tilde with less/greater
         replace key <TLDE> { [ less, greater, less, greater ] };
