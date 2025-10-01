@@ -217,7 +217,7 @@ in {
 
   # services.tailscale.enable = true;
   services.udev.extraHwdb = ''
-    evdev:input:b0003v05ACp*
+    evdev:name:Apple Inc. Apple Keyboard:*
      KEYBOARD_KEY_ff0003=rightctrl
   '';
 }
