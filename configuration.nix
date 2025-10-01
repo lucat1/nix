@@ -219,5 +219,9 @@ in {
   services.udev.extraHwdb = ''
     evdev:input:b0003v05ACp021E*
      KEYBOARD_KEY_ff0003=rightctrl
+
+    # Also try this more generic pattern
+    evdev:input:*
+     KEYBOARD_KEY_ff0003=rightctrl
   '';
 }
