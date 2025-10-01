@@ -27,28 +27,13 @@
         profile.outputs = [
           {
             criteria = builtin_display;
-            status = "disable";
-          }
-          {
-            criteria = "BNQ BenQ GW2470 H8F00852019";
             position = "0,0";
+            scale = 2.0;
           }
           {
-            criteria = "BNQ BenQ GW2470 H8F00853019";
-            position = "1920,0";
-          }
-        ];
-      }
-      {
-        profile.name = "dock-zurich";
-        profile.outputs = [
-          {
-            criteria = builtin_display;
-            status = "disable";
-          }
-          {
-            criteria = "Samsung Electric Company SAMSUNG Unknown";
-            position = "0,0";
+            criteria = "HP Inc. HP Z27k G3 CN41271V20";
+            position = "1440,0";
+            scale = 2.0;
           }
         ];
       }
