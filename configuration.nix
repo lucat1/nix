@@ -215,5 +215,20 @@ in {
     };
   };
 
-  services.tailscale.enable = true;
+  # services.tailscale.enable = true;
+
+  services.keyd = {
+    enable = true;
+    keyboards = {
+      apple = {
+        ids = ["*05ac:*"]; # Apple vendor ID
+        settings = {
+          main = {
+            # Remap Fn key to Left Control
+            fn = "leftcontrol";
+          };
+        };
+      };
+    };
+  };
 }
