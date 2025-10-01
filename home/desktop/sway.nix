@@ -24,7 +24,12 @@
 
         // Swap grave/tilde with less/greater
         replace key <TLDE> { [ less, greater, less, greater ] };
-        replace key <LSGT> { [ grave, asciitilde, grave, asciitilde ] };
+        replace key <LSGT> {
+            type[Group1] = "FOUR_LEVEL",
+            type[Group2] = "FOUR_LEVEL",
+            symbols[Group1] = [ grave, asciitilde, grave, asciitilde ],
+            symbols[Group2] = [ dead_grave, dead_tilde, dead_grave, dead_tilde ]
+        };
       };
       xkb_geometry  { include "pc(pc105)" };
     };
