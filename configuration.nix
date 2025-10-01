@@ -240,6 +240,15 @@ in {
             # Key between left shift and z (currently `/~) should be </>
             grave = "102nd"; # This swaps to output < and >
           };
+
+          # Enable layout switching with both shifts pressed simultaneously
+          "rightshift" = {
+            leftshift = "leftshift+rightshift";
+          };
+
+          "leftshift" = {
+            rightshift = "leftshift+rightshift";
+          };
         };
       };
     };
