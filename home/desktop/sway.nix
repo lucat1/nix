@@ -14,6 +14,8 @@
       xkb_symbols   {
         include "pc+us+us(intl):2+inet(evdev)+altwin(swap_alt_win)+capslock(escape)+group(shifts_toggle)"
 
+        replace key <I464> { [ Control_R ] };
+
         // Swap grave/tilde with less/greater
         replace key <TLDE> { [ less, greater, less, greater ] };
         replace key <LSGT> {
