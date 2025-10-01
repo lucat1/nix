@@ -216,4 +216,19 @@ in {
   };
 
   # services.tailscale.enable = true;
+
+  services.keyd = {
+    enable = true;
+    keyboards = {
+      apple = {
+        ids = ["05ac:021e"]; # Apple, Inc. Aluminum Mini Keyboard (ISO)
+        settings = {
+          main = {
+            # remap fn to ctrl
+            fn = "layer(control)";
+          };
+        };
+      };
+    };
+  };
 }
