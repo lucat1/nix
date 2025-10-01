@@ -216,4 +216,8 @@ in {
   };
 
   # services.tailscale.enable = true;
+  services.udev.extraHwdb = ''
+    evdev:input:b*v*p*
+     KEYBOARD_KEY_70039=rightctrl
+  '';
 }
