@@ -5,7 +5,23 @@
   lib,
   vars,
   ...
-}: {
+}: let
+  xkbKeymap = pkgs.writeText "apple-keymap" ''
+    xkb_keymap {
+      xkb_keycodes  { include "evdev+aliases(qwerty)" };
+      xkb_types     { include "complete" };
+      xkb_compat    { include "complete" };
+      xkb_symbols   {
+        include "pc+us+us(intl)+inet(evdev)+altwin(swap_alt_win)+capslock(escape)+group(shifts_toggle)"
+
+        // Swap grave/tilde with less/greater
+        replace key <TLDE> { [ less, greater, less, greater ] };
+        replace key <LSGT> { [ grave, asciitilde, grave, asciitilde ] };
+      };
+      xkb_geometry  { include "pc(pc105)" };
+    };
+  '';
+in {
   home.pointerCursor = {
     name = "Adwaita";
     package = pkgs.adwaita-icon-theme;
@@ -41,6 +57,9 @@
           repeat_delay = "300";
           xkb_layout = "us,us(intl)";
           xkb_options = "grp:shifts_toggle,caps:escape";
+        };
+        "1452:542:Apple_Inc._Apple_Keyboard" = {
+          xkb_file = "${xkbKeymap}";
         };
       };
 

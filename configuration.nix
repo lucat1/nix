@@ -216,32 +216,4 @@ in {
   };
 
   # services.tailscale.enable = true;
-
-  services.keyd = {
-    enable = true;
-    keyboards = {
-      apple = {
-        ids = ["05ac:021e"]; # Apple, Inc. Aluminum Mini Keyboard (ISO)
-        settings = {
-          main = {
-            # remap fn to ctrl
-            fn = "layer(control)";
-
-            # Swap Alt (Option) and Cmd (Super/Meta)
-            leftalt = "leftmeta";
-            leftmeta = "leftalt";
-            rightalt = "rightmeta";
-            rightmeta = "rightalt";
-
-            # Fix Swiss/German keyboard layout quirk
-            # Key next to 1 (currently <>) should be backtick/tilde
-            "102nd" = "grave"; # This is the key between left shift and z (outputs ` and ~)
-
-            # Key between left shift and z (currently `/~) should be </>
-            grave = "102nd"; # This swaps to output < and >
-          };
-        };
-      };
-    };
-  };
 }
