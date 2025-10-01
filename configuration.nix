@@ -225,7 +225,7 @@ in {
         settings = {
           main = {
             # Remap Fn key to Left Control
-            fn = "leftcontrol";
+            fn = "layer(control)";
           };
         };
       };
