@@ -29,6 +29,7 @@
       go
       tree-sitter
       nodejs
+      python3
     ];
 
     extraLuaConfig = ''
