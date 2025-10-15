@@ -27,7 +27,8 @@
         profile.outputs = [
           {
             criteria = builtin_display;
-            position = "0,540";
+            # 540px from the top to line it up on the bottom of the screen
+            position = "0,270";
             scale = 2.0;
           }
           {
