@@ -19,6 +19,8 @@ in {
   boot.loader.systemd-boot.enable = true;
   boot.loader.systemd-boot.consoleMode = "max";
   boot.loader.efi.canTouchEfiVariables = true;
+  # to have nat64 capability
+  boot.extraModulePackages = with config.boot.kernelPackages; [jool];
 
   networking = {
     hostName = vars.hostname;
