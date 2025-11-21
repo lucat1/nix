@@ -110,6 +110,8 @@ in {
           "${modifier}+d" = null;
           "${modifier}+f" = "floating toggle";
           "${modifier}+Shift+f" = "fullscreen";
+          "${modifier}+v" = "splitv toggle";
+          "${modifier}+s" = "splith toggle";
 
           "${modifier}+Alt+1" = "exec ${lib.getExe scr}";
           "${modifier}+p" = "exec ${lib.getExe pws}";
