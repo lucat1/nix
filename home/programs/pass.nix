@@ -39,7 +39,7 @@ in {
     settings = {
       email = vars.email;
       base_url = "https://vault.teapot.ovh";
-      lock_timeout = 60 * 60; # 1 hour
+      lock_timeout = 4 * 60 * 60; # 4 hours
       pinentry = pinentry;
     };
   };
