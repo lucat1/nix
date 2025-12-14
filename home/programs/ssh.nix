@@ -6,7 +6,7 @@
 }: {
   programs.ssh = {
     enable = true;
-    addKeysToAgent = "yes";
+    enableDefaultConfig = false;
     matchBlocks = let
       proxmoxForward = {
         bind.port = 8006;
@@ -15,6 +15,7 @@
       };
     in {
       "*" = {
+        addKeysToAgent = "yes";
         setEnv = {
           TERM = "xterm-256color";
         };

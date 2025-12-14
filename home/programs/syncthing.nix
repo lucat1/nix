@@ -4,9 +4,8 @@
   pkgs,
   ...
 }: {
-  services.syncthing = {
-    # TODO: temporarily disabled
-    enable = false;
-    tray = false;
-  };
+  # services.syncthing = {
+  #   enable = true;
+  #   tray = false;
+  # };
 }

@@ -15,7 +15,6 @@
   home.packages = with pkgs; [
     roboto
     noto-fonts
-    noto-fonts-extra
     noto-fonts-cjk-sans
     nerd-fonts.blex-mono
   ];
