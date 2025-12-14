@@ -33,7 +33,7 @@ pkgs.writeShellApplication {
 
     current=$(nixos-rebuild list-generations | grep current)
 
-    git cm "$current"
+    git commit -m "$current"
     git push
     popd
     notify-send -e "NixOS Rebuild Successful"
