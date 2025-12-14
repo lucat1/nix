@@ -31,9 +31,9 @@ pkgs.writeShellApplication {
     # shellcheck disable=SC2024
     sudo nixos-rebuild switch &> nixos-switch.log || (grep --color error < nixos-switch.log && exit 1)
 
-    current=$(nixos-rebuild list-generations | grep current)
+    version=$(nixos-rebuild list-generations | grep True | cut -d' ' -f 1)
 
-    git commit -m "$current"
+    git commit -m "revision: $version"
     git push
     popd
     notify-send -e "NixOS Rebuild Successful"
