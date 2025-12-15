@@ -42,6 +42,10 @@ in {
           interval = 0;
         };
       };
+      plugins = with pkgs; [
+        # ensure we have priorietary VPN support
+        networkmanager-openconnect
+      ];
     };
   };
   services.resolved = {
@@ -188,10 +192,6 @@ in {
     git
     killall
     pciutils
-
-    # ensure we have priorietary VPN support
-    openconnect
-    networkmanager-openconnect
 
     docker-compose
   ];
