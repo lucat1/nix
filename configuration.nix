@@ -121,6 +121,7 @@ in {
   services.printing.drivers = [
     pkgs.gutenprint
     pkgs.gutenprintBin
+    pkgs.samsung-unified-linux-driver
   ];
   hardware.sane.enable = true;
 
