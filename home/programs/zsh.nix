@@ -19,6 +19,7 @@
       gd = "${pkgs.git}/bin/git diff --name-only --relative --diff-filter=d | ${pkgs.findutils}/bin/xargs ${pkgs.bat}/bin/bat --diff";
       dir = "${pkgs.yazi}/bin/yazi";
       k = "${pkgs.kubectl}/bin/kubectl";
+      kctx = "${pkgs.kubectx}/bin/kubectx";
     };
 
     prezto = {
