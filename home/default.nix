@@ -78,6 +78,7 @@
     # inputs.nixpkgs-unstable.legacyPackages.x86_64-linux.zotero-beta
 
     kubectl
+    kubectx
     k9s
     gemini-cli
   ];
