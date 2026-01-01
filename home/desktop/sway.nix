@@ -135,7 +135,7 @@ in {
       startup = map (service: {
         command = "${lib.getExe' pkgs.systemd "systemctl"} --user reload-or-restart ${service}.service";
         always = true;
-      }) ["kanshi" "waybar"];
+      }) ["kanshi" "waybar" "xwayland-satellite"];
     };
 
     extraConfig = ''
