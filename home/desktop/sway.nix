@@ -45,7 +45,7 @@ in {
 
   wayland.windowManager.sway = {
     enable = true;
-    xwayland = true;
+    xwayland = false;
 
     config = let
       cmenu = (import ../scripts/menu.nix) {
@@ -156,5 +156,6 @@ in {
 
   home.packages = with pkgs; [
     wl-mirror
+    xwayland-satellite
   ];
 }
