@@ -25,7 +25,7 @@ in {
   networking = {
     hostName = vars.hostname;
     firewall = {
-      enable = true;
+      enable = false; # TODO
       logReversePathDrops = true;
       checkReversePath = "loose";
     };
