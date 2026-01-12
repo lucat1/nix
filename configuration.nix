@@ -25,9 +25,8 @@ in {
   networking = {
     hostName = vars.hostname;
     firewall = {
-      enable = false; # TODO
+      enable = true;
       logReversePathDrops = true;
-      checkReversePath = "loose";
     };
     nameservers = ["1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one"];
     networkmanager = {
@@ -218,8 +217,9 @@ in {
     };
   };
 
-  services.tailscale.enable = true;
-  services.tailscale.useRoutingFeatures = "client";
+  # services.tailscale.enable = true;
+  # services.tailscale.useRoutingFeatures = "client";
+  # networking.firewall.enable = false;
 
   services.udev.extraHwdb = ''
     evdev:input:b0003v05ACp021E*
