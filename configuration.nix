@@ -219,6 +219,7 @@ in {
   };
 
   services.tailscale.enable = true;
+  services.tailscale.useRoutingFeatures = "client";
 
   services.udev.extraHwdb = ''
     evdev:input:b0003v05ACp021E*
