@@ -8,11 +8,8 @@ $ sudo nix-collect-garbage -d --delete-older-than 2d
 
 To update the whole system:
 
-$ sudo nixos-rebuild switch --upgrade \
-  --update-input nixpkgs \
-  --update-input nixpkgs-unstable \
-  --update-input home-manager \
-  --update-input nix-index-database
+$ sudo nix flake update
+$ sudo nixos-rebuild switch
 
 Other amazing tool for nix daily life:
   https://lazamar.co.uk/nix-versions
