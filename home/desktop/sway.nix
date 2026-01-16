@@ -158,4 +158,8 @@ in {
     wl-mirror
     xwayland-satellite
   ];
+
+  systemd.user.sessionVariables = {
+    DISLPAY = ":0";
+  };
 }
