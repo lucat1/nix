@@ -173,7 +173,7 @@ in {
       #   user = vars.user;
       # };
       initial_session = {
-        command = "${pkgs.sway}/bin/sway";
+        command = lib.getExe pkgs.sway;
         user = vars.user;
       };
       default_session = initial_session;
