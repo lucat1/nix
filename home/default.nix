@@ -75,7 +75,7 @@
     ghostscript # required by previous
     mpv
 
-    # inputs.nixpkgs-unstable.legacyPackages.x86_64-linux.zotero-beta
+    zotero # TODO: remove
 
     kubectl
     kubectx
