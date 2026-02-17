@@ -76,6 +76,7 @@
     mpv
 
     zotero # TODO: remove
+    surfer # TODO: remove
 
     kubectl
     kubectx
