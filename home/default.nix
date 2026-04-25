@@ -81,6 +81,7 @@
     kubectl
     kubectx
     k9s
+    stern
     gemini-cli
   ];
 
