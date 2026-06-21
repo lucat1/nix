@@ -24,10 +24,10 @@ in {
 
   networking = {
     hostName = vars.hostname;
-    # firewall = {
-    #   enable = true;
-    #   logReversePathDrops = true;
-    # };
+    firewall = {
+      enable = true;
+      logReversePathDrops = true;
+    };
     nameservers = ["1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one"];
     networkmanager = {
       enable = true;
@@ -49,60 +49,20 @@ in {
   };
   services.resolved = {
     enable = true;
-    dnssec = "false"; # "allow-downgrade";
-    domains = []; # ["~."];
-    fallbackDns = ["1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one"];
-    dnsovertls = "false"; # "opportunistic";
-    extraConfig = "
-    MulticastDNS=false
-    ";
+    settings = {
+      Resolve = {
+        DNSOverTLS =  "opportunistic";
+        DNSSEC = "allow-downgrade";
+        Domains = ["~."];
+        FallbackDns = ["1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one"];
+      };
+    };
   };
   systemd.services.nssd = {
     enable = false;
     wantedBy = lib.mkForce [];
   };
   services.clatd.enable = true;
-  # services.dnscrypt-proxy2 = {
-  #   enable = true;
-  #   settings = {
-  #     ipv6_servers = true;
-  #     require_dnssec = true;
-  #
-  #     dnscrypt_servers = false;
-  #     doh_servers = true;
-  #     odoh_servers = true;
-  #     require_nolog = true;
-  #     require_nofilter = true;
-  #
-  #     sources.public-resolvers = {
-  #       urls = [
-  #         "https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/public-resolvers.md"
-  #         "https://download.dnscrypt.info/resolvers-list/v3/public-resolvers.md"
-  #         "https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/odoh-resolvers.md"
-  #       ];
-  #       cache_file = "/var/lib/dnscrypt-proxy2/public-resolvers.md";
-  #       minisign_key = "RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3";
-  #     };
-  #
-  #     # From https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v3/public-resolvers.md
-  #     server_names = [
-  #       "odohrelay-ibksturm" # Switzerland
-  #       "odohrelay-ams" # Amsterdam
-  #       "odohrelay-se" # Sweden
-  #
-  #       "quad9-doh-ip4-port443-nofilter-pri"
-  #       "quad9-doh-ip4-port5053-filter-pri"
-  #       # "quad9-doh-ip6-port443-nofilter-pri"
-  #       # "quad9-doh-ip6-port5053-filter-pri"
-  #
-  #       "cloudflare"
-  #       # "cloudflare-ipv6"
-  #     ];
-  #   };
-  # };
-  # systemd.services.dnscrypt-proxy2.serviceConfig = {
-  #   StateDirectory = "dnscrypt-proxy";
-  # };
 
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
@@ -219,7 +179,6 @@ in {
 
   services.tailscale.enable = true;
   services.tailscale.useRoutingFeatures = "client";
-  networking.firewall.enable = false;
 
   services.udev.extraHwdb = ''
     evdev:input:b0003v05ACp021E*

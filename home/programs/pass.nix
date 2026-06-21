@@ -15,6 +15,8 @@ in {
   programs.password-store = {
     enable = true;
     package = pkgs.gopass.override {passAlias = true;};
+    # adapt to 26.05
+    settings = { };
   };
 
   xdg.configFile."gopass/config".text = ''

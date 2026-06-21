@@ -17,6 +17,8 @@
     gtk4.extraConfig = {
       gtk-application-prefer-dark-theme = true;
     };
+    # adapt to 26.05
+    gtk4.theme = null;
   };
 
   qt = {

@@ -7,6 +7,9 @@
   programs.firefox = {
     enable = true;
 
+    # adapt to 26.05
+    configPath = "${config.xdg.configHome}/mozilla/firefox";
+
     profiles = {
       default = {
         isDefault = true;

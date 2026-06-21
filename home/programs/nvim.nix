@@ -22,6 +22,8 @@
     vimAlias = true;
     vimdiffAlias = true;
     defaultEditor = true;
+    withRuby = false;
+    withPython3 = false;
 
     extraPackages = with pkgs; [
       git
@@ -32,7 +34,7 @@
       python3
     ];
 
-    extraLuaConfig = ''
+    initLua = ''
       require'visimp'{
         defaults = {
           foldmethod = 'marker',
