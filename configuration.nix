@@ -28,7 +28,7 @@ in {
       enable = true;
       logReversePathDrops = true;
     };
-    nameservers = ["1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one"];
+    # nameservers = ["1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one"];
     networkmanager = {
       enable = true;
       wifi = {
@@ -51,8 +51,8 @@ in {
     enable = true;
     settings = {
       Resolve = {
-        DNSOverTLS =  "opportunistic";
-        DNSSEC = "allow-downgrade";
+        # DNSOverTLS =  "opportunistic";
+        # DNSSEC = "allow-downgrade";
         Domains = ["~."];
         FallbackDns = ["1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one"];
       };

@@ -4,7 +4,7 @@
   pkgs,
   vars,
   ...
-}: {
+}: rec {
   gtk = {
     enable = true;
     theme = {
@@ -14,11 +14,12 @@
     gtk3.extraConfig = {
       gtk-application-prefer-dark-theme = true;
     };
-    gtk4.extraConfig = {
-      gtk-application-prefer-dark-theme = true;
+    gtk4 = {
+      theme = gtk.theme;
+      extraConfig = {
+        gtk-application-prefer-dark-theme = true;
+      };
     };
-    # adapt to 26.05
-    gtk4.theme = null;
   };
 
   qt = {

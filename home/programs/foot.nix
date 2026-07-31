@@ -21,7 +21,7 @@
         hide-when-typing = true;
         alternate-scroll-mode = true;
       };
-      colors = {
+      colors-dark = {
         background = vars.colors.bg;
         foreground = vars.colors.fg;
         regular0 = vars.colors.bg0;
