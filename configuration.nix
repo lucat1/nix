@@ -154,6 +154,7 @@ in {
     pciutils
 
     docker-compose
+    bazelisk
   ];
   services.locate = {
     enable = true;
