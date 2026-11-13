@@ -38,6 +38,12 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    opencode = {
+      # url = "github:anomalyco/opencode";
+      url = "github:jerome-benoit/opencode/nix-lockfile-deps"; # fixes a bug with Nix flakes
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {

@@ -43,6 +43,7 @@
     ./programs/firefox.nix
     ./programs/foot.nix
     ./programs/nvim.nix
+    # ./programs/opencode.nix
 
     ./programs/basic.nix
     ./programs/bat.nix
@@ -82,7 +83,7 @@
     kubectx
     k9s
     stern
-    gemini-cli
+    gh
   ];
 
   programs.thunderbird = {
